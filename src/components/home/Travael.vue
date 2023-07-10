@@ -1,0 +1,45 @@
+<template>
+    <section class="travel">
+        <div class="container">
+            <div class="travel-wrapper">
+                <div class="travel-info">
+                    <span class="travel-text">supercharge your planning powers</span>
+                    <h2 class="title travel-title">Travel to make memories all around the world</h2>
+                    <Send />
+                </div>
+                <img :src="img" alt="img">
+            </div>
+        </div>
+    </section>
+</template>
+
+<script setup>
+import Send from '../Send.vue';
+import img from "../../assets/img/travel/img.png";
+</script>
+
+<style lang="scss">
+.travel {
+    padding: 56px 0 100px;
+
+    &-wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    &-info {
+        max-width: 448px;
+    }
+
+    &-text {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        color: rgba(119, 126, 144, 1); 
+    }
+    &-title {
+        margin: 15px 0 40px;
+        text-align: left !important;
+    }
+}
+</style>
