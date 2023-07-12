@@ -82,9 +82,80 @@ import TextBtn from '../../TextBtn.vue';
     }
 
     &-btn {
-         margin: 55px auto 0; 
-         display: flex;
-         justify-content: center;
+        margin: 55px auto 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    @media screen and (max-width:1110px) {
+        &-name {
+            top: 420px;
+        }
+    }
+
+    @media screen and (max-width:1020px) {
+        &-name {
+            top: 370px;
+        }
+
+        &-btn {
+            margin-top: 0;
+        }
+    }
+
+    @media screen and (max-width:910px) {
+        &-name {
+            top: 320px;
+        }
+
+        &-btn {
+            margin-top: 0;
+        }
+    }
+
+    @media screen and (max-width:810px) {
+        &-name {
+            top: 360px;
+        }
+
+        &-btn {
+            margin-top: 0;
+        }
+    }
+
+    @media screen and (max-width:730px) {
+
+        & {
+            padding: 7px 0 91px;
+        }
+
+        &-name {
+            top: 230px;
+            left: 40px;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 32px;
+        }
+
+        &-btn {
+            margin-top: 0;
+        }
+
+        &-swiper_line {
+            display: none;
+        }
+
+        h2 {
+            font-size: 34px;
+            font-weight: 600;
+        }
+
+        &-info {
+            margin-bottom: 30px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
     }
 }
 </style>

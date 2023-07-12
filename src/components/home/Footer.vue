@@ -94,6 +94,7 @@ import Send from '../Send.vue';
         height: 1px;
         background: rgba(228, 228, 231, 1); 
         margin-top: 32px !important;
+        padding: 0 !important;
     }
 
     @media screen and (max-width:890px) {

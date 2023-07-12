@@ -129,6 +129,7 @@ const ruList = [
         left: 50%;
         transform: translate(-50%, 0);
         z-index: -1;
+        max-width: 100%;
     }
 
     &-circle {
@@ -189,7 +190,7 @@ const ruList = [
         line-height: 30px;
         letter-spacing: 0.01em;
         text-align: center;
-        color: rgba(35, 38, 47, 1);
+        color: rgba(35, 38, 47, 1); 
         width: 1040px;
     }
 
@@ -218,6 +219,11 @@ const ruList = [
         display: block;
     }
 
+    @media screen and (max-width:1070px) {
+        &-wrapper {
+            display: none;
+        }
+    }
 
 }
 </style>

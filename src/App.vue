@@ -2,7 +2,7 @@
   <!-- <Modal /> -->
   <div class="wrapper">
     <Header />
-    <!-- <Hero /> -->
+    <Hero />
   </div>
   <About />
   <Our />
@@ -10,7 +10,7 @@
   <!-- <Team /> -->
   <How />
   <Trevael />
-  <!-- <Reviews /> -->
+  <Reviews />
   <Footer />
 </template>
 
