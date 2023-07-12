@@ -10,7 +10,7 @@
   <!-- <Team /> -->
   <How />
   <Trevael />
-  <Reviews />
+  <!-- <Reviews /> -->
   <Footer />
 </template>
 
