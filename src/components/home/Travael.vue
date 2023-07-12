@@ -5,7 +5,7 @@
                 <div class="travel-info">
                     <span class="travel-text">supercharge your planning powers</span>
                     <h2 class="title travel-title">Travel to make memories all around the world</h2>
-                    <Send />
+                    <Send class="travel-send" />
                 </div>
                 <img :src="img" alt="img">
             </div>
@@ -35,11 +35,49 @@ import img from "../../assets/img/travel/img.png";
         font-size: 12px;
         font-weight: 700;
         letter-spacing: 0.01em;
-        color: rgba(119, 126, 144, 1); 
+        color: rgba(119, 126, 144, 1);
     }
+
     &-title {
         margin: 15px 0 40px;
         text-align: left !important;
+    }
+
+    @media screen and (max-width:1110px) {
+        &-wrapper {
+            flex-wrap: wrap-reverse;
+            justify-content: center;
+            text-align: center;
+
+        }
+
+        h2 {
+            text-align: center !important;
+        }
+
+        &-send {
+            margin: 0 auto;
+        }
+
+        &-info {
+            max-width: 590px;
+            margin-top: 32px;
+        }
+    }
+
+    @media screen and (max-width:685px) {
+        & {
+            padding: 60px 0;
+        }
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 36px;
+            margin:12px 0 40px;
+        }
+        img{
+            max-width: 100%;
+        }
     }
 }
 </style>

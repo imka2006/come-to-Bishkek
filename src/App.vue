@@ -1,15 +1,16 @@
 <template>
+  <!-- <Modal /> -->
   <div class="wrapper">
     <Header />
-    <Hero />
+    <!-- <Hero /> -->
   </div>
   <About />
   <Our />
   <Services />
-  <Team />
+  <!-- <Team /> -->
   <How />
   <Trevael />
-  <Gg />
+  <!-- <Reviews /> -->
   <Footer />
 </template>
 
@@ -22,8 +23,9 @@ import Team from './components/home/Team.vue';
 import Footer from './components/home/Footer.vue';
 import How from './components/home/How.vue';
 import Trevael from './components/home/Travael.vue';
-import Gg from './components/home/Reviews.vue';
+import Reviews from './components/home/Reviews.vue';
 import Hero from './components/home/hero/Hero.vue';
+import Modal from './components/Modal.vue';
 
 
 </script>
@@ -31,15 +33,28 @@ import Hero from './components/home/hero/Hero.vue';
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   padding: 0;
   font-family: 'Inter';
 }
 
+
+
+a[href^="#"] {
+  transition: all 0.3s ease-in-out;
+}
+
+a[href^="#"]:hover {
+  opacity: 0.7;
+}
+
 .wrapper {
   background-color: #ccc;
-  background: url('./assets/img/global/IK.png') center no-repeat;
+  background: url('./assets/img/global/Bish.png') center no-repeat;
   background-size: cover;
 }
 
@@ -93,4 +108,11 @@ li {
 input {
   border: none;
   outline: none;
-}</style>
+}
+
+@media screen and (max-width:1140px) {
+  .container {
+    padding: 0 10px;
+  }
+}
+</style>

@@ -3,11 +3,11 @@
         <div class="container">
             <div class="how-wrapper">
                 <h2 class="title">How we work</h2>
-                <p class="text">Keep calm & travel on</p>
+                <p class="how-descr text">Keep calm & travel on</p>
                 <div class="how-content">
                     <div v-for="item in list" :key="item.id" class="how-block">
                         <img :src="item.img" alt="img">
-                        <h4 class="how-name">{{item.name}}</h4>
+                        <h4 class="how-name">{{ item.name }}</h4>
                         <p class="how-description">{{ item.description }}</p>
                     </div>
                 </div>
@@ -99,6 +99,58 @@ const list = ref(enList)
         font-weight: 400;
         line-height: 24px;
         color: rgba(119, 126, 144, 1);
+    }
+
+    @media screen and (max-width:1010px) {
+        &-content {
+            flex-wrap: wrap;
+            gap: 50px;
+            justify-content: center;
+        }
+    }
+
+    @media screen and (max-width:710px) {
+        & {
+            padding: 60px 0;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 600;
+            line-height: 42px;
+            margin-bottom: 12px;
+        }
+
+        &-descr {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 27px;
+        }
+
+        &-content {
+            margin-top: 32px;
+            gap: 44px;
+        }
+
+        &-block {
+            max-width: unset; 
+        }
+
+        &-name {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 30px;
+        }
+
+        &-text {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 24px;
+        }
+
+        img {
+            max-width: 100%;
+        }
     }
 
 }

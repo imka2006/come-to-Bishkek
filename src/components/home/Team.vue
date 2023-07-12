@@ -1,5 +1,5 @@
 <template>
-    <section class="team">
+    <section id="team" class="team">
         <div class="container">
             <h2 class="title">Awesome Team</h2>
             <p style="max-width: 760px;  margin: 0 auto;" class="text">Our professional and friendly team speaks several

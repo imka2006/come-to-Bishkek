@@ -1,8 +1,8 @@
 <template>
-    <section class="services">
+    <section id="services" class="services">
         <div class="container">
             <h2 class="title">Our Services</h2>
-            <p class="text">Lots of services for everyone</p>
+            <p class="services-descr text">Lots of services for everyone</p>
             <div class="services-wrapper">
                 <img class="services-bg services-left" :src="Left" alt="img">
                 <img class="services-bg services-right" :src="Right" alt="img">
@@ -80,7 +80,8 @@ if (lang.value === 'en') {
 <style lang="scss">
 .services {
     padding: 70px 0 135px;
-    &-wrapper { 
+
+    &-wrapper {
         margin-top: 64px;
         position: relative;
     }
@@ -89,14 +90,17 @@ if (lang.value === 'en') {
         max-width: 352px;
         margin-bottom: 40px;
     }
+
     &-bg {
         position: absolute;
     }
+
     &-right {
         right: 0;
         top: 50px;
         z-index: -1;
     }
+
     &-left {
         top: 155px;
         right: 135px;
@@ -131,6 +135,59 @@ if (lang.value === 'en') {
         letter-spacing: 0.01em;
         color: rgba(119, 126, 144, 1);
         line-height: 24px;
+    }
+
+    @media screen and (max-width:1000px) {
+        &-left {
+            width: 35%;
+            right: 55px;
+        }
+
+        &-right {
+            width: 20%;
+        }
+    }
+
+    @media screen and (max-width:650px) {
+        & {
+            padding: 60px 0;
+        }
+
+        &-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-right {
+            width: 40%;
+            position: unset;
+            margin-left: auto;
+            margin-right: 10%;
+            margin-bottom: 32px;
+        }
+
+        &-left {
+            top: 0px;
+            right: 30%;
+            width: 65%;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 600;
+            line-height: 42px;
+            margin-bottom: 12px;
+        }
+
+        &-descr {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 27px;
+        }
+
+        &-block {
+            margin: 0 auto 28px;
+        }
     }
 
 }

@@ -1,10 +1,23 @@
 <template>
-    <swiper :effect="'coverflow'" :grabCursor="true" :centeredSlides="true" :slidesPerView="3" :coverflowEffect="{
+    <swiper :effect="'coverflow'" :grabCursor="true" :centeredSlides="true" :slidesPerView="3"  :coverflowEffect="{
         rotate: 30,
         stretch: 0,
         depth: 10,
         modifier: 2,
-    }" :modules="modules" :initialSlide="1"  class="hero-swiper">
+    }" :modules="modules" :breakpoints="{
+    '700': {
+        slidesPerView: 2,
+        spaceBetween: 30,
+    }, 
+    '960': {
+        slidesPerView: 2.5,
+        spaceBetween: 30,
+    }, 
+    '1145': {
+        slidesPerView: 3,
+        spaceBetween: 10,
+    },
+}"  :initialSlide="1"   class="hero-swiper">
         <swiper-slide v-for="(item) in enList" :key="item.id">
             <img :src="item.img" class="hero-img" />
             <span class="hero-name">{{ item.name }}</span>

@@ -1,6 +1,6 @@
 <template>
     <section class="hero">
-        <div class="container">
+        <div class="container" style="padding: 0 !important;">
             <div class="hero-content">
                 <h2 class="hero-title">Book the Tours</h2>
                 <div class="hero-info">

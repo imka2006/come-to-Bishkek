@@ -1,17 +1,17 @@
 <template>
-    <section class="our">
+    <section id="our" class="our">
         <div class="container">
-            <div class="our-wrapper"> 
+            <div class="our-wrapper">
                 <h2 class="title">Our advantages</h2>
-                <p class="text">Keep calm & travel on</p>
+                <p class="our-descr text">Keep calm & travel on</p>
             </div>
             <div class="our-content">
-                <div class="our-block" v-for="item in list" :key="item.id"> 
+                <div class="our-block" v-for="item in list" :key="item.id">
                     <component :is="item.icon"></component>
                     <h4 class="our-name">{{ item.name }}</h4>
                     <p class="our-description">{{ item.description }}</p>
                 </div>
-             
+
             </div>
         </div>
     </section>
@@ -25,42 +25,42 @@ import { ref } from 'vue';
 
 const enList = [
     {
-        id:0,
-        icon:First,
-        name:'24/7 online:',
-        description:'We flexibly adapt our tours to the needs and interests of each guest. 24/7 online to contact you.',
+        id: 0,
+        icon: First,
+        name: '24/7 online:',
+        description: 'We flexibly adapt our tours to the needs and interests of each guest. 24/7 online to contact you.',
     },
     {
-        id:1,
-        icon:Second,
-        name:'Quality and safety:',
-        description:'We adhere to high standards of service quality and guarantee the safety of our guests during all excursions and trips.',
+        id: 1,
+        icon: Second,
+        name: 'Quality and safety:',
+        description: 'We adhere to high standards of service quality and guarantee the safety of our guests during all excursions and trips.',
     },
     {
-        id:2,
-        icon:Third,
-        name:'Authentic experience:',
-        description:'We aim to show guests the real Kyrgyzstan, including visiting local villages, interacting with locals and participating in traditional activities.',
+        id: 2,
+        icon: Third,
+        name: 'Authentic experience:',
+        description: 'We aim to show guests the real Kyrgyzstan, including visiting local villages, interacting with locals and participating in traditional activities.',
     }
 ]
 const ruList = [
     {
-        id:0,
-        icon:First,
-        name:'24/7 онлайн:',
-        description:'Мы гибко адаптируем наши туры к потребностям и интересам каждого гостя. 24/7 онлайн, чтобы связаться с вами.',
+        id: 0,
+        icon: First,
+        name: '24/7 онлайн:',
+        description: 'Мы гибко адаптируем наши туры к потребностям и интересам каждого гостя. 24/7 онлайн, чтобы связаться с вами.',
     },
     {
-        id:1,
-        icon:Second,
-        name:'Качество и безопасность:',
-        description:'Мы придерживаемся высоких стандартов качества обслуживания и гарантируем безопасность наших гостей во время всех экскурсий и поездок.',
+        id: 1,
+        icon: Second,
+        name: 'Качество и безопасность:',
+        description: 'Мы придерживаемся высоких стандартов качества обслуживания и гарантируем безопасность наших гостей во время всех экскурсий и поездок.',
     },
     {
-        id:2,
-        icon:Third,
-        name:'Подлинный опыт:',
-        description:'Мы стремимся показать гостям настоящий Кыргызстан, включая посещение местных деревень, общение с местными жителями и участие в традиционных мероприятиях.',
+        id: 2,
+        icon: Third,
+        name: 'Подлинный опыт:',
+        description: 'Мы стремимся показать гостям настоящий Кыргызстан, включая посещение местных деревень, общение с местными жителями и участие в традиционных мероприятиях.',
     }
 ]
 const lang = ref('en')
@@ -78,6 +78,7 @@ if (lang.value === 'en') {
 <style lang="scss">
 .our {
     padding: 120px 0;
+
     &-title {
         color: #23262F;
         text-align: center;
@@ -116,10 +117,52 @@ if (lang.value === 'en') {
     }
 
     &-description {
-        color: #777E90; 
-        font-size: 14px; 
-        font-weight: 400; 
+        color: #777E90;
+        font-size: 14px;
+        font-weight: 400;
         letter-spacing: 0.14px;
+    }
+
+    @media screen and (max-width:930px) {
+        &-content {
+            flex-wrap: wrap;
+            gap: 50px;
+            justify-content: center;
+        }
+    }
+
+    @media screen and (max-width:620px) {
+        h2 {
+            font-size: 28px;
+            font-weight: 600;
+            line-height: 42px;
+            margin-bottom: 8px;
+        }
+
+        &-descr {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 27px;
+        }
+
+        &-name {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 30px;
+        }
+
+        &-text {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 24px;
+        }
+        &-content {
+            gap: 32px;
+        }
+
+        & {
+            padding: 60px 0;
+        }
     }
 }
 </style>

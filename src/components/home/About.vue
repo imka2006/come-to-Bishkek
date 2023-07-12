@@ -1,5 +1,5 @@
 <template>
-    <section class="about">
+    <section id="about" class="about">
         <div class="container">
             <div class="about-wrapper">
                 <img :src="img" alt="img">
@@ -11,14 +11,12 @@
                         Republic.</p>
                 </div>
             </div>
-            <!-- <Bg class="about-bg" /> -->
         </div>
     </section>
 </template>
 
 <script setup>
-import img from '../../assets/img/about/img.png';
-// import Bg from '../../assets/img/about/bg.png';
+import img from '../../assets/img/about/img.png'; 
 </script>
 
 <style lang="scss">
@@ -57,6 +55,36 @@ import img from '../../assets/img/about/img.png';
         font-weight: 400;
         letter-spacing: 0.18px;
         line-height: 30px;
+    }
+
+    @media screen and (max-width:1160px) {
+        &-wrapper {
+            flex-direction: column;
+            gap: 40px;
+        }
+    }
+
+    @media screen and (max-width:575px) {
+        & {
+            padding: 80px 0;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 600;
+            line-height: 42px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 30px;
+        }
+
+        img {
+            max-width: 100%;
+        }
     }
 
 }
