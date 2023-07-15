@@ -2,7 +2,7 @@
     <section class="reviews">
         <div class="container">
             <h2 class="title">Happy Adventurers Share Their Experiences</h2>
-            <p class="text">Find trips that fit a flexible lifestyle</p>
+            <p class="text reviews-head_text">Find trips that fit a flexible lifestyle</p>
             <div class="reviews-wrapper">
                 <p class="reviews-text">{{ text }}</p>
                 <img :src="Img" class="reviews-map" alt="img">
@@ -14,6 +14,18 @@
                     <span class="reviews-from">{{ from }}</span>
                 </div>
             </div>
+            <div class="reviews-wrapper another">
+                <img :src="Img" class="reviews-map another" alt="img">
+                <swiper :navigation="true" :modules="modules" class="mySwiper">
+                    <swiper-slide v-for="item in enList" :key="item.id">
+                        <p class="reviews-reviews">{{ item.text }}</p>
+                        <div class="reviews-more">
+                            <h4 class="reviews-name">{{ item.name }}</h4>
+                            <span class="reviews-from">{{ item.from }}</span>
+                        </div>
+                    </swiper-slide>
+                </swiper>
+            </div>
         </div>
     </section>
 </template>
@@ -21,6 +33,12 @@
 <script setup>
 import { ref } from 'vue';
 import Img from '../../assets/img/reviews/img.png';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { Navigation } from 'swiper/modules';
+
+const modules = [Navigation];
 
 const isActive = ref(null)
 const list = ref(null)
@@ -114,6 +132,33 @@ const ruList = [
 </script>
 
 <style lang="scss">
+.mySwiper {
+    padding: 155px 0px;
+}
+
+.swiper-button-next {
+    background: url("../../assets/icons/reviews/next.svg");
+    width: 32px;
+    height: 32px;
+    top: auto;
+
+    &::after {
+        content: "";
+    }
+}
+
+.swiper-button-prev {
+    background: url("../../assets/icons/reviews/prev.svg");
+    width: 32px;
+    height: 32px;
+    bottom: 180px;
+    top: auto;
+
+    &::after {
+        content: "";
+    }
+}
+
 .reviews {
     padding: 70px 0 60px;
 
@@ -122,6 +167,26 @@ const ruList = [
         position: relative;
         width: 100%;
         height: 100%;
+
+        &.another {
+            display: none;
+        }
+    }
+
+    &-more {
+        margin-top: 45px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &-reviews {
+        color: #23262F;
+        text-align: center;
+        font-size: 18px;
+        letter-spacing: 0.14px;
+        margin: 0 auto;
+        max-width: 800px;
     }
 
     &-map {
@@ -130,6 +195,10 @@ const ruList = [
         transform: translate(-50%, 0);
         z-index: -1;
         max-width: 100%;
+
+        &.another {
+            position: absolute;
+        }
     }
 
     &-circle {
@@ -190,7 +259,7 @@ const ruList = [
         line-height: 30px;
         letter-spacing: 0.01em;
         text-align: center;
-        color: rgba(35, 38, 47, 1); 
+        color: rgba(35, 38, 47, 1);
         width: 1040px;
     }
 
@@ -222,7 +291,63 @@ const ruList = [
     @media screen and (max-width:1070px) {
         &-wrapper {
             display: none;
+
+            &.another {
+                display: block;
+            }
         }
+    }
+
+    @media screen and (max-width:630px) {
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.24px;
+        }
+
+        &-head_text {
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        &-reviews {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .mySwiper {
+            padding: 30px 0;
+        }
+
+        &-name {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        &-from {
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            bottom: 50px;
+        }
+
+    }
+
+    @media screen and (max-width:420px) {
+
+
+        .mySwiper {
+            padding: 0;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            bottom: 5px;
+        }
+
     }
 
 }

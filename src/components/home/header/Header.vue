@@ -121,6 +121,9 @@ const isActive = ref(true)
   }
 
   @media screen and (max-width:1155px) {
+    .burger {
+      display: block;
+    }
     &-item {
       display: none;
     }

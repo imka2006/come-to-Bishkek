@@ -7,10 +7,10 @@
   <About />
   <Our />
   <Services />
-  <!-- <Team /> -->
+  <Team />
   <How />
   <Trevael />
-  <!-- <Reviews /> -->
+  <Reviews />
   <Footer />
 </template>
 
