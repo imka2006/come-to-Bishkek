@@ -15,7 +15,7 @@
                 <div v-else class="footer-another">
                     <ul class="footer-list">
                         <li v-for="item in ruList" :key="item.id" class="footer-item"><a    
-                                href="#about">{{ item.name }}</a></li>
+                                :href="item.link">{{ item.name }}</a></li>
                     </ul>
                     <ul class="footer-list">
                         <li v-for="item in ruListSec" :key="item.id" class="footer-item"><a :href="item.link">{{item.name}}</a></li> 
