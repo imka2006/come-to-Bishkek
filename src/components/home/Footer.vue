@@ -3,20 +3,26 @@
         <div class="container">
             <div class="footer-wrapper">
                 <Logo />
-                <div class="footer-another">
+                <div v-if="$i18n.locale == 'en'" class="footer-another">
                     <ul class="footer-list">
-                        <li class="footer-item"><a href="#about">About us</a></li>
-                        <li class="footer-item"><a href="#our">Our advantages</a></li>
-                        <li class="footer-item"><a href="#services">Our Services</a></li>
+                        <li v-for="item in enList" :key="item.id" class="footer-item"><a    
+                                href="#about">{{ item.name }}</a></li>
                     </ul>
                     <ul class="footer-list">
-                        <li class="footer-item"><a href="#team">Awesome Team</a></li>
-                        <li class="footer-item"><a href="#">Feedback</a></li>
-                        <li class="footer-item"><a href="#video">Video Preview</a></li>
+                        <li v-for="item in enListSec" :key="item.id" class="footer-item"><a :href="item.link">{{item.name}}</a></li> 
+                    </ul>
+                </div>
+                <div v-else class="footer-another">
+                    <ul class="footer-list">
+                        <li v-for="item in ruList" :key="item.id" class="footer-item"><a    
+                                href="#about">{{ item.name }}</a></li>
+                    </ul>
+                    <ul class="footer-list">
+                        <li v-for="item in ruListSec" :key="item.id" class="footer-item"><a :href="item.link">{{item.name}}</a></li> 
                     </ul>
                 </div>
                 <ul class="footer-list_another">
-                    <li class="footer-item litle"><a href="#" target="_blank">You will be contacted</a></li>
+                    <li class="footer-item litle"><a href="#" target="_blank">{{$t('footerText')}}</a></li>
                     <li class="footer-item">
                         <Send />
                     </li>
@@ -27,9 +33,9 @@
 
 
             </div>
-            
+
             <div class="footer-line container"></div>
-            <p class="footer-descr">Copyright © 2023 Design by ITMAG Studio</p>
+            <p class="footer-descr">{{ $t('footerBottom') }}</p>
         </div>
     </footer>
 </template>
@@ -37,6 +43,82 @@
 <script setup>
 import Logo from '../../assets/icons/footer/Logo.vue';
 import Send from '../Send.vue';
+
+const enList = [
+    {
+        id: 1,
+        name: "About us",
+        link: "#about"
+    },
+    {
+        id: 2,
+        name: "Our advantages",
+        link: "#our"
+    },
+    {
+        id: 3,
+        name: "Our Services",
+        link: "#services"
+    }, 
+]
+const ruList = [
+  {
+    id: 1,
+    name: "О нас",
+    link: "#about"
+  },
+  {
+    id: 2,
+    name: "Наши преимущества",
+    link: "#our"
+  },
+  {
+    id: 3,
+    name: "Наши услуги",
+    link: "#services"
+  }
+];
+const enListSec = [
+    {
+        id: 1,
+        name: "Awesome Team",
+        link: "#team"
+    },
+    {
+        id: 2,
+        name: "Feedback",
+        link: "#"
+    },
+    {
+        id: 3,
+        name: "Our Services",
+        link: "#video"
+    }, 
+]
+const ruListSec = [
+  {
+    id: 1,
+    name: "Отличная команда",
+    link: "#team"
+  },
+  {
+    id: 2,
+    name: "Связаться",
+    link: "#"
+  },
+  {
+    id: 3,
+    name: "Наши услуги",
+    link: "#video"
+  }
+];
+
+
+
+
+
+
+
 </script>
 
 <style lang="scss">
@@ -92,7 +174,7 @@ import Send from '../Send.vue';
     &-line {
         width: 100%;
         height: 1px;
-        background: rgba(228, 228, 231, 1); 
+        background: rgba(228, 228, 231, 1);
         margin-top: 32px !important;
         padding: 0 !important;
     }

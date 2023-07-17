@@ -2,16 +2,16 @@
     <section class="hero">
         <div class="container" style="padding: 0 !important;">
             <div class="hero-content">
-                <h2 class="hero-title">Book the Tours</h2>
+                <h2 class="hero-title">{{ $t('heroTitle') }}</h2>
                 <div class="hero-info">
                     <div class="hero-line"></div>
-                    selected
+                    {{ $t('heroSubtitle') }}
                     <div class="hero-line"></div>
                 </div>
                 <div class="hero-wrapper">
                     <Slider />
                 </div>
-                <TextBtn class="hero-btn" title="Book my trip" />
+                <TextBtn class="hero-btn" :title="$t('heroBtn')" />
             </div>
         </div>
     </section>

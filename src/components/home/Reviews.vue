@@ -1,31 +1,58 @@
 <template>
     <section class="reviews">
         <div class="container">
-            <h2 class="title">Happy Adventurers Share Their Experiences</h2>
-            <p class="text reviews-head_text">Find trips that fit a flexible lifestyle</p>
-            <div class="reviews-wrapper">
-                <p class="reviews-text">{{ text }}</p>
-                <img :src="Img" class="reviews-map" alt="img">
-                <div v-for="(item, i) in enList" :key="item.id" class='reviews-circle'
-                    :class="isActive == i ? 'active ' + item.class : item.class" @click="isActive = i; getData(item)">
+            <h2 class="title">{{$t('reviewsTitle')}}</h2>
+            <p class="text reviews-head_text">{{$t('reviewsText')}}</p>
+            <template v-if="$i18n.locale == 'en'">
+                <div class="reviews-wrapper">
+                    <p class="reviews-text">{{ text }}</p>
+                    <img :src="Img" class="reviews-map" alt="img">
+                    <div v-for="(item, i) in enList" :key="item.id" class='reviews-circle'
+                        :class="isActive == i ? 'active ' + item.class : item.class" @click="isActive = i; getData(item)">
+                    </div>
+                    <div class="reviews-info">
+                        <h4 class="reviews-name">{{ name }}</h4>
+                        <span class="reviews-from">{{ from }}</span>
+                    </div>
                 </div>
-                <div class="reviews-info">
-                    <h4 class="reviews-name">{{ name }}</h4>
-                    <span class="reviews-from">{{ from }}</span>
+                <div class="reviews-wrapper another">
+                    <img :src="Img" class="reviews-map another" alt="img">
+                    <swiper :navigation="true" :modules="modules" class="mySwiper">
+                        <swiper-slide v-for="item in enList" :key="item.id">
+                            <p class="reviews-reviews">{{ item.text }}</p>
+                            <div class="reviews-more">
+                                <h4 class="reviews-name">{{ item.name }}</h4>
+                                <span class="reviews-from">{{ item.from }}</span>
+                            </div>
+                        </swiper-slide>
+                    </swiper>
                 </div>
-            </div>
-            <div class="reviews-wrapper another">
-                <img :src="Img" class="reviews-map another" alt="img">
-                <swiper :navigation="true" :modules="modules" class="mySwiper">
-                    <swiper-slide v-for="item in enList" :key="item.id">
-                        <p class="reviews-reviews">{{ item.text }}</p>
-                        <div class="reviews-more">
-                            <h4 class="reviews-name">{{ item.name }}</h4>
-                            <span class="reviews-from">{{ item.from }}</span>
-                        </div>
-                    </swiper-slide>
-                </swiper>
-            </div>
+            </template> 
+            <template v-else>
+                <div class="reviews-wrapper">
+                    <p class="reviews-text">{{ text }}</p>
+                    <img :src="Img" class="reviews-map" alt="img">
+                    <div v-for="(item, i) in ruList" :key="item.id" class='reviews-circle'
+                        :class="isActive == i ? 'active ' + item.class : item.class" @click="isActive = i; getData(item)">
+                    </div>
+                    <div class="reviews-info">
+                        <h4 class="reviews-name">{{ name }}</h4>
+                        <span class="reviews-from">{{ from }}</span>
+                    </div>
+                </div>
+                <div class="reviews-wrapper another">
+                    <img :src="Img" class="reviews-map another" alt="img">
+                    <swiper :navigation="true" :modules="modules" class="mySwiper">
+                        <swiper-slide v-for="item in ruList" :key="item.id">
+                            <p class="reviews-reviews">{{ item.text }}</p>
+                            <div class="reviews-more">
+                                <h4 class="reviews-name">{{ item.name }}</h4>
+                                <span class="reviews-from">{{ item.from }}</span>
+                            </div>
+                        </swiper-slide>
+                    </swiper>
+                </div>
+            </template>
         </div>
     </section>
 </template>

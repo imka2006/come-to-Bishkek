@@ -2,14 +2,24 @@
     <section class="how">
         <div class="container">
             <div class="how-wrapper">
-                <h2 class="title">How we work</h2>
-                <p class="how-descr text">Keep calm & travel on</p>
+                <h2 class="title">{{$t('howTitle')}}</h2>
+                <p class="how-descr text">{{$t('howText')}}</p>
                 <div class="how-content">
-                    <div v-for="item in list" :key="item.id" class="how-block">
-                        <img :src="item.img" alt="img">
-                        <h4 class="how-name">{{ item.name }}</h4>
-                        <p class="how-description">{{ item.description }}</p>
-                    </div>
+                    <template v-if="$i18n.locale == 'en'">
+                        <div v-for="item in enList" :key="item.id" class="how-block">
+                            <img :src="item.img" alt="img">
+                            <h4 class="how-name">{{ item.name }}</h4>
+                            <p class="how-description">{{ item.description }}</p>
+                        </div>
+                    </template>
+                    <template v-else>
+                        <div v-for="item in ruList" :key="item.id" class="how-block">
+                            <img :src="item.img" alt="img">
+                            <h4 class="how-name">{{ item.name }}</h4>
+                            <p class="how-description">{{ item.description }}</p>
+                        </div>
+                    </template>
+
                 </div>
             </div>
         </div>
@@ -46,19 +56,19 @@ const enList = [
 const ruList = [
     {
         id: 0,
-        img: "First",
+        img: First,
         name: 'Забронируйте и расслабьтесь',
         description: "Вы бронируете лучший тур, заполняете заявку, в которой можете указать только вашу почту."
     },
     {
         id: 1,
-        img: "Second",
+        img: Second,
         name: 'Подготовка к туру',
         description: "С нашей стороны, мы уже готовимся к вашему приезду, чтобы все было на самом высоком уровне."
     },
     {
         id: 2,
-        img: "Third",
+        img: Third,
         name: 'Оплата на месте',
         description: "Вы не отправляете деньги вперед, вы платите только на месте по прибытии к нам."
     }
@@ -77,7 +87,7 @@ const list = ref(enList)
     &-content {
         margin-top: 64px;
         display: flex;
-        align-items: start;
+        align-items: center;
         justify-content: space-between;
     }
 
@@ -133,7 +143,7 @@ const list = ref(enList)
         }
 
         &-block {
-            max-width: unset; 
+            max-width: unset;
         }
 
         &-name {
@@ -153,5 +163,4 @@ const list = ref(enList)
         }
     }
 
-}
-</style>
+}</style>

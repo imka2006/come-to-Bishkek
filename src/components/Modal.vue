@@ -1,12 +1,12 @@
 <template>
-    <div class="modal">
+    <div v-show="store.state.modal" class="modal">
         <div class="modal-wrapper">
             <div class="modal-head">
                 <div>
                     <h2 class="modal-title">We will contact you</h2>
                     <p class="modal-description">Put your details so we can contact you very fast!</p>
                 </div>
-                <Close style="cursor: pointer;" />
+                <Close style="cursor: pointer;" @click="store.state.modal = false" />
             </div>
             <form class="modal-content">
                 <div class="modal-info">
@@ -29,7 +29,7 @@
                         <input type="number" placeholder="123 - 456 - 7890">
                     </label>
                 </div>
-                <TextBtn title="Send" class="modal-btn" />
+                <button class="modal-btn">Send</button>
             </form>
         </div>
     </div>
@@ -38,6 +38,9 @@
 <script setup>
 import Close from "../assets/icons/modal/Close.vue";
 import TextBtn from "../components/TextBtn.vue";
+import { useStore } from 'vuex';
+
+const store = useStore();
 </script>
 
 <style lang="scss">
@@ -128,6 +131,14 @@ import TextBtn from "../components/TextBtn.vue";
     &-btn {
         width: 100%;
         text-align: center;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 16px;
+        letter-spacing: 0.01em;
+        padding: 16px 24px 17px 24px;
+        border-radius: 90px;
+        background: rgba(90, 204, 3, 1);
+        color: rgba(252, 252, 253, 1);
     }
 
     @media screen and (max-width:760px) {
@@ -172,8 +183,9 @@ import TextBtn from "../components/TextBtn.vue";
                 font-weight: 500;
                 line-height: 21px;
             }
+
             margin-bottom: 4px;
-        } 
+        }
 
         input {
             padding: 14px 16px;

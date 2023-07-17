@@ -1,9 +1,12 @@
 <template>
-  <button>{{ title }}</button>
+  <button @click="store.state.modal = !store.state.modal; console.log(store.state.modal )">{{ title }}</button>
 </template>
 
 <script setup> 
-defineProps(['title']); 
+defineProps(['title']);    
+import { useStore } from 'vuex';
+
+const store = useStore();
 </script>
 
 <style scoped>

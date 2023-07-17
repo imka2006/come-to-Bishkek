@@ -1,5 +1,5 @@
 <template>
-  <!-- <Modal /> -->
+  <Modal />
   <div class="wrapper">
     <Header />
     <Hero />
@@ -11,6 +11,7 @@
   <How />
   <Trevael />
   <Reviews />
+  <Enjoy />
   <Footer />
 </template>
 
@@ -24,6 +25,7 @@ import Footer from './components/home/Footer.vue';
 import How from './components/home/How.vue';
 import Trevael from './components/home/Travael.vue';
 import Reviews from './components/home/Reviews.vue';
+import Enjoy from './components/home/Enjoy.vue';
 import Hero from './components/home/hero/Hero.vue';
 import Modal from './components/Modal.vue';
 
@@ -108,6 +110,12 @@ li {
 input {
   border: none;
   outline: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 @media screen and (max-width:1140px) {

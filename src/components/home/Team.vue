@@ -1,25 +1,42 @@
 <template>
     <section id="team" class="team">
         <div class="container">
-            <h2 class="title">Awesome Team</h2>
-            <p style="max-width: 760px;  margin: 0 auto;" class="team-text text">Our professional and friendly team speaks
-                several
-                languages and knows Kyrgyzstan inside and out.</p>
+            <h2 class="title">{{$t('teamTitle')}}</h2>
+            <p style="max-width: 760px;  margin: 0 auto;" class="team-text text">{{ $t('teamText') }}</p>
             <div class="team-wrapper">
-                <div v-for="item in enList" :key="item.id" class="team-block">
-                    <img :src="item.img" alt="">
-                    <h4 class="team-name">{{ item.name }}</h4>
-                    <span class="team-description">{{ item.text }}</span>
-                    <div class="team-line"></div>
-                    <div class="team-cocial">
-                        <a href="#" target="_blank">
-                            <Instagram />
-                        </a>
-                        <a href="#" target="_blank">
-                            <Facebook />
-                        </a>
+                <template v-if="$i18n.locale == 'en'">
+                    <div v-for="item in enList" :key="item.id" class="team-block">
+                        <img :src="item.img" alt="">
+                        <h4 class="team-name">{{ item.name }}</h4>
+                        <span class="team-description">{{ item.text }}</span>
+                        <div class="team-line"></div>
+                        <div class="team-cocial">
+                            <a href="#" target="_blank">
+                                <Instagram />
+                            </a>
+                            <a href="#" target="_blank">
+                                <Facebook />
+                            </a>
+                        </div>
                     </div>
-                </div>
+                </template>
+                <template v-else>
+                    <div v-for="item in ruList" :key="item.id" class="team-block">
+                        <img :src="item.img" alt="">
+                        <h4 class="team-name">{{ item.name }}</h4>
+                        <span class="team-description">{{ item.text }}</span>
+                        <div class="team-line"></div>
+                        <div class="team-cocial">
+                            <a href="#" target="_blank">
+                                <Instagram />
+                            </a>
+                            <a href="#" target="_blank">
+                                <Facebook />
+                            </a>
+                        </div>
+                    </div>
+                </template>
+
             </div>
         </div>
     </section>
@@ -35,6 +52,7 @@ import Aisana from "../../assets/img/team/aisana.png";
 import Kanat from "../../assets/img/team/kanat.png";
 import Aigerim from "../../assets/img/team/aigerim.png";
 import Murat from "../../assets/img/team/murat.png";
+
 
 
 const enList = [
@@ -62,31 +80,57 @@ const enList = [
         facebook: "",
         instagram: "",
     },
-    {
-        id: 3,
-        img: Kanat,
-        name: "Kanat",
-        text: "Guide",
-        facebook: "",
-        instagram: "",
-    },
-    {
-        id: 4,
-        img: Aigerim,
-        name: "Aigerim",
-        text: "Guide",
-        facebook: "",
-        instagram: "",
-    },
-    {
-        id: 5,
-        img: Murat,
-        name: "Murat",
-        text: "Guide",
-        facebook: "",
-        instagram: "",
-    },
+    // {
+    //     id: 3,
+    //     img: Kanat,
+    //     name: "Kanat",
+    //     text: "Guide",
+    //     facebook: "",
+    //     instagram: "",
+    // },
+    // {
+    //     id: 4,
+    //     img: Aigerim,
+    //     name: "Aigerim",
+    //     text: "Guide",
+    //     facebook: "",
+    //     instagram: "",
+    // },
+    // {
+    //     id: 5,
+    //     img: Murat,
+    //     name: "Murat",
+    //     text: "Guide",
+    //     facebook: "",
+    //     instagram: "",
+    // },
 ]
+const ruList = [
+    {
+        id: 0,
+        img: Meerim,
+        name: "Меерим",
+        text: "Соучредитель",
+        facebook: "",
+        instagram: "",
+    },
+    {
+        id: 1,
+        img: Darian,
+        name: "Дариан",
+        text: "Владелец и основатель",
+        facebook: "",
+        instagram: "",
+    },
+    {
+        id: 2,
+        img: Aisana,
+        name: "Айсана",
+        text: "Менеджер",
+        facebook: "",
+        instagram: "",
+    },
+];
 </script>
 
 <style lang="scss">
@@ -182,11 +226,10 @@ const enList = [
         }
 
         &-description {
-            font-size: 14px; 
+            font-size: 14px;
             font-weight: 400;
         }
 
 
     }
-}
-</style>
+}</style>

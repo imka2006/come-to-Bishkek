@@ -3,8 +3,8 @@
         <div class="container">
             <div class="travel-wrapper">
                 <div class="travel-info">
-                    <span class="travel-text">supercharge your planning powers</span>
-                    <h2 class="title travel-title">Travel to make memories all around the world</h2>
+                    <span class="travel-text">{{$t('travaelText')}}</span>
+                    <h2 class="title travel-title">{{$t('travaelTitle')}}</h2>
                     <Send class="travel-send" />
                 </div>
                 <img :src="img" alt="img">

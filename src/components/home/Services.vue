@@ -1,17 +1,27 @@
 <template>
     <section id="services" class="services">
         <div class="container">
-            <h2 class="title">Our Services</h2>
-            <p class="services-descr text">Lots of services for everyone</p>
+            <h2 class="title">{{$t("servicesTitle")}}</h2>
+            <p class="services-descr text">{{$t("servicesText")}}</p>
             <div class="services-wrapper">
                 <img class="services-bg services-left" :src="Left" alt="img">
                 <img class="services-bg services-right" :src="Right" alt="img">
-                <div class="services-block" v-for="item in list" :key="item.id">
-                    <span class="services-number">0{{ item.id }}</span>
-                    <h4 class="services-name">{{ item.name }}</h4>
-                    <p class="services-description">{{ item.description }}</p>
-                </div>
-                <TextBtn title="Book my trip" />
+                <template v-if="$i18n.locale == 'en'">
+                    <div class="services-block" v-for="item in enList" :key="item.id">
+                        <span class="services-number">0{{ item.id }}</span>
+                        <h4 class="services-name">{{ item.name }}</h4>
+                        <p class="services-description">{{ item.description }}</p>
+                    </div>
+                </template>
+                <template v-else>
+                    <div class="services-block" v-for="item in ruList" :key="item.id">
+                        <span class="services-number">0{{ item.id }}</span>
+                        <h4 class="services-name">{{ item.name }}</h4>
+                        <p class="services-description">{{ item.description }}</p>
+                    </div>
+                </template>
+
+                <TextBtn :title="$t('servicesBtn')" />
             </div>
         </div>
     </section>

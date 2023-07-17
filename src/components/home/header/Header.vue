@@ -7,11 +7,15 @@
             <Logo />
           </li>
           <li class="header-line"></li>
-          <li class="header-item"><a href="#about">About us</a></li>
-          <li class="header-item"><a href="#our">Advantages</a></li>
-          <li class="header-item"><a href="#services">Services</a></li>
-          <li class="header-item"><a href="#team">Team</a></li>
-          <li class="header-item"><a href="#">Feedback</a></li>
+          <template v-if="$i18n.locale == 'en'">
+            <li v-for="item in store.state.enList" :key="item.id" class="header-item"><a :href="item.link">{{ item.name
+            }}</a></li>
+          </template>
+          <template v-else>
+            <li v-for="item in store.state.ruList" :key="item.id" class="header-item"><a :href="item.link">{{ item.name
+            }}</a></li>
+          </template>
+
         </ul>
         <div class="header-cocial">
           <div class="header-info">
@@ -64,9 +68,11 @@ import Logo from '../../../assets/icons/header/Logo.vue';
 import Facebook from '../../../assets/icons/header/Facebook.vue';
 import Instagram from '../../../assets/icons/header/Instagram.vue';
 import Burger from '../../../components/home/header/Burger.vue';
-import { ref } from 'vue'; 
+import { ref } from 'vue';
+import { useStore } from 'vuex';
 
 const isActive = ref(true)
+const store = useStore()
 
 
 </script>
@@ -124,6 +130,7 @@ const isActive = ref(true)
     .burger {
       display: block;
     }
+
     &-item {
       display: none;
     }

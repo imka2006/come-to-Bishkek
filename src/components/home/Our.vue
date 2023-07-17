@@ -2,16 +2,24 @@
     <section id="our" class="our">
         <div class="container">
             <div class="our-wrapper">
-                <h2 class="title">Our advantages</h2>
-                <p class="our-descr text">Keep calm & travel on</p>
+                <h2 class="title">{{ $t('ourTitle')}}</h2>
+                <p class="our-descr text">{{ $t('ourText')}}</p>
             </div>
             <div class="our-content">
-                <div class="our-block" v-for="item in list" :key="item.id">
-                    <component :is="item.icon"></component>
-                    <h4 class="our-name">{{ item.name }}</h4>
-                    <p class="our-description">{{ item.description }}</p>
-                </div>
-
+                <template v-if="$i18n.locale == 'en'">
+                    <div class="our-block" v-for="item in enList" :key="item.id">
+                        <component :is="item.icon"></component>
+                        <h4 class="our-name">{{ item.name }}</h4>
+                        <p class="our-description">{{ item.description }}</p>
+                    </div>
+                </template>
+                <template v-else>
+                    <div class="our-block" v-for="item in ruList" :key="item.id">
+                        <component :is="item.icon"></component>
+                        <h4 class="our-name">{{ item.name }}</h4>
+                        <p class="our-description">{{ item.description }}</p>
+                    </div>
+                </template> 
             </div>
         </div>
     </section>
@@ -97,7 +105,7 @@ if (lang.value === 'en') {
 
     &-content {
         display: flex;
-        align-items: start;
+        align-items: center;
         justify-content: space-between;
         margin-top: 40px;
 
@@ -156,6 +164,7 @@ if (lang.value === 'en') {
             font-weight: 400;
             line-height: 24px;
         }
+
         &-content {
             gap: 32px;
         }

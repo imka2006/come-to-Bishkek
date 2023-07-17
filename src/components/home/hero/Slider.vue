@@ -30,11 +30,21 @@
         spaceBetween: 0,
     },
 }" :initialSlide="1" class="hero-swiper">
-        <swiper-slide v-for="(item) in enList" :key="item.id">
+        <template v-if="$i18n.locale == 'en'">
+            <swiper-slide  v-for="(item) in enList" :key="item.id">
             <img :src="item.img" class="hero-img" />
             <span class="hero-name">{{ item.name }}</span>
             <div class="hero-slider_line" :class="item.name"></div>
         </swiper-slide>
+        </template>
+      <template v-else>
+        <swiper-slide  v-for="(item) in ruList" :key="item.id">
+            <img :src="item.img" class="hero-img" />
+            <span class="hero-name">{{ item.name }}</span>
+            <div class="hero-slider_line" :class="item.name"></div>
+        </swiper-slide>
+      </template>
+      
     </swiper>
 </template>
   
@@ -49,6 +59,7 @@ import { ref } from 'vue';
 import IK from "../../../assets/img/hero/IK.png"
 import Bish from "../../../assets/img/hero/Bish.png"
 import Naryn from "../../../assets/img/hero/Naryn.png"
+import i18n from '../../../i18n'; 
 
 const enList = [
     {
@@ -67,7 +78,24 @@ const enList = [
         name: "Naryn"
     },
 ]
-
+const ruList = [
+    {
+        id: 0,
+        img: IK,
+        name: "Иссык-Куль"
+    },
+    {
+        id: 1,
+        img: Bish,
+        name: "Бишкек"
+    },
+    {
+        id: 2,
+        img: Naryn,
+        name: "Нарын"
+    },
+]
+ 
 const modules = [EffectCoverflow];
 
 

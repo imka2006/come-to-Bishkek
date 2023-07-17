@@ -4,11 +4,8 @@
             <div class="about-wrapper">
                 <img :src="img" alt="img">
                 <div class="about-content">
-                    <h2 class="about-title">About us</h2>
-                    <p class="about-description">We offer individual tours in Kyrgyzstan, which allow foreigners to get
-                        acquainted with the Kyrgyz culture, history and nature. Our team of experts will take care of every
-                        detail so that our guests can have an unforgettable experience and get to know the real Kyrgyz
-                        Republic.</p>
+                    <h2 class="about-title">{{$t('aboutTitle')}}</h2>
+                    <p class="about-description">{{ $t("aboutText") }}</p>
                 </div>
             </div>
         </div>
