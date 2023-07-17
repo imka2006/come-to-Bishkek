@@ -5,6 +5,8 @@ const i18n = createI18n({
     messages: {
         en: { 
 
+            burgerText:"Contacts",
+
             heroTitle: "Book the Tours",
             heroSubtitle: "selected",
             heroBtn: "Book my trip",
@@ -39,6 +41,8 @@ const i18n = createI18n({
 
         },
         ru: { 
+
+            burgerText:"Контакты",
 
             heroTitle: "Забронировать туры",
             heroSubtitle: "выборы",

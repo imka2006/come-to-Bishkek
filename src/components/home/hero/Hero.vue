@@ -67,6 +67,7 @@ import TextBtn from '../../TextBtn.vue';
         top: 455px;
         transition: .3s;
         z-index: 12;
+        width: max-content;
     }
 
     &-slider_line {

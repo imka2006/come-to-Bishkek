@@ -60,7 +60,7 @@
                         }}</a>
                 </template>
             </div>
-            <span class="burger-name">Contacts</span>
+            <span class="burger-name">{{ $t('burgerText') }}</span>
             <a class="burger-item another" href="tel:+996708221198">+996 (708) 221 198</a>
             <a class="burger-item another" href="mailto:info@cometobishkek.com">info@cometobishkek.com</a>
             <div class="burger-cocial">
