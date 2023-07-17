@@ -7,7 +7,8 @@
                     <h2 class="title travel-title">{{$t('travaelTitle')}}</h2>
                     <Send class="travel-send" />
                 </div>
-                <img :src="img" alt="img">
+                <img v-if="$i18n.locale == 'en'" :src="img" alt="img">
+                <img v-else :src="imgru" alt="img">
             </div>
         </div>
     </section>
@@ -16,6 +17,7 @@
 <script setup>
 import Send from '../Send.vue';
 import img from "../../assets/img/travel/img.png";
+import imgru from "../../assets/img/travel/imgru.png";
 </script>
 
 <style lang="scss">

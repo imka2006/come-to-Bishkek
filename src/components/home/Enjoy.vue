@@ -1,12 +1,12 @@
 <template>
-    <section class="enjoy">
+    <section class="enjoy" id="video">
         <div class="container">
             <div class="enjoy-head">
                 <h2 class="ttile" v-if="$i18n.locale == 'en'">Book a tour <br />
                     and just enjoy</h2>
                 <h2 class="ttile" v-else>Забронировать тур <br />
                     и просто наслаждайся</h2>
-                <TextBtn :title="$t('enjoyBtn')" />
+                <TextBtn class="enjoy-btn" :title="$t('enjoyBtn')" />
             </div>
             <div class="enjoy-wrapper">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/IWDY2nLohIY"
@@ -14,6 +14,7 @@
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
             </div>
+                <TextBtn class="enjoy-btn another" :title="$t('enjoyBtn')" />
         </div>
     </section>
 </template>
@@ -40,10 +41,42 @@ import TextBtn from '../TextBtn.vue';
         margin-top: 80px;
     }
 
+    &-btn {
+        &.another {
+            display: none;
+        }
+    }
+
     iframe {
         width: 100%;
         height: 500px;
         border-radius: 15px;
+    }
+
+    @media screen and (max-width:600px) {
+        &-btn.another {
+            display: block;
+            margin: 25px auto 0;
+        }
+        &-btn {
+            display: none;
+        }
+        &-head {
+            justify-content: center;
+        }
+        h2 {
+            text-align: center;
+        }
+        &-wrapper {
+            margin-top: 35px;
+        }
+    }
+    @media screen and (max-width:400px) {
+        &-btn.another {
+            width: 100%;
+            text-align: center;
+        }
+      
     }
 
 }

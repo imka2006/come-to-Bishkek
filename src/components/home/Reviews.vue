@@ -333,8 +333,8 @@ const ruList = [
         }
 
         &-head_text {
-            font-size: 18px;
-            font-weight: 400;
+            font-size: 18px !important;
+            font-weight: 400 !important;
         }
 
         &-reviews {
