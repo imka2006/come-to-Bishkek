@@ -57,6 +57,7 @@ export default createStore({
               link: "#"
             }
           ],
+          lang:true,
     },
     getters: {},
     mutations: {},

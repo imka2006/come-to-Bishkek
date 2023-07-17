@@ -28,7 +28,7 @@
           <a href="#" target="_blank" class="header-item">
             <Instagram />
           </a>
-          <div v-if="isActive" class="header-item" @click="isActive = !isActive">
+          <div v-if="store.state.lang" class="header-item" @click="store.state.lang = !store.state.lang; $i18n.locale = 'ru'">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd"
                 d="M9.99935 16.6667C13.6812 16.6667 16.666 13.6819 16.666 9.99999C16.666 6.31809 13.6812 3.33332 9.99935 3.33332C6.31745 3.33332 3.33268 6.31809 3.33268 9.99999C3.33268 13.6819 6.31745 16.6667 9.99935 16.6667ZM9.99935 18.3333C14.6017 18.3333 18.3327 14.6024 18.3327 9.99999C18.3327 5.39762 14.6017 1.66666 9.99935 1.66666C5.39698 1.66666 1.66602 5.39762 1.66602 9.99999C1.66602 14.6024 5.39698 18.3333 9.99935 18.3333Z"
@@ -42,7 +42,7 @@
             </svg>
             EN
           </div>
-          <div v-else class="header-item" @click="isActive = !isActive">
+          <div  v-else class="header-item" @click="store.state.lang = !store.state.lang; $i18n.locale = 'en'">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd"
                 d="M9.99935 16.6667C13.6812 16.6667 16.666 13.6819 16.666 9.99999C16.666 6.31809 13.6812 3.33332 9.99935 3.33332C6.31745 3.33332 3.33268 6.31809 3.33268 9.99999C3.33268 13.6819 6.31745 16.6667 9.99935 16.6667ZM9.99935 18.3333C14.6017 18.3333 18.3327 14.6024 18.3327 9.99999C18.3327 5.39762 14.6017 1.66666 9.99935 1.66666C5.39698 1.66666 1.66602 5.39762 1.66602 9.99999C1.66602 14.6024 5.39698 18.3333 9.99935 18.3333Z"
@@ -70,8 +70,7 @@ import Instagram from '../../../assets/icons/header/Instagram.vue';
 import Burger from '../../../components/home/header/Burger.vue';
 import { ref } from 'vue';
 import { useStore } from 'vuex';
-
-const isActive = ref(true)
+ 
 const store = useStore()
 
 
@@ -139,4 +138,5 @@ const store = useStore()
       display: none;
     }
   }
-}</style>
+}
+</style>
