@@ -37,6 +37,10 @@ const i18n = createI18n({
 
             footerBottom:"Copyright © 2023 Design by ITMAG Studio",
             footerText:"You will be contacted",
+
+            modalTitle:"We will contact you",
+            modalDescription:"Put your details so we can contact you very fast!",
+            modalBtn:"Send",
             
 
         },
@@ -74,6 +78,10 @@ const i18n = createI18n({
 
             footerBottom:"Copyright © 2023 Дизайн ITMAG Studio",
             footerText:"С вами свяжутся",
+
+            modalTitle:"Мы свяжемся с вами",
+            modalDescription:"Укажите свои данные, чтобы мы могли связаться с вами очень быстро!",
+            modalBtn:"Отправить",
         
 
         },

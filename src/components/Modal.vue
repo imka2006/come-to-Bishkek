@@ -3,33 +3,37 @@
         <div class="modal-wrapper">
             <div class="modal-head">
                 <div>
-                    <h2 class="modal-title">We will contact you</h2>
-                    <p class="modal-description">Put your details so we can contact you very fast!</p>
+                    <h2 class="modal-title">{{$t('modalTitle')}}</h2>
+                    <p class="modal-description">{{ $t('modalDescription') }}</p>
                 </div>
                 <Close style="cursor: pointer;" @click="store.state.modal = false" />
             </div>
             <form class="modal-content">
                 <div class="modal-info">
                     <label class="modal-label">
-                        <p class="modal-text">First name <span>(optional)</span></p>
+                        <p v-if="$i18n.locale == 'en'" class="modal-text">First name <span>(optional)</span></p>
+                        <p v-else class="modal-text">Имя <span>(необязательно)</span></p>    
                         <input type="text" placeholder="Amelia">
                     </label>
                     <label class="modal-label">
-                        <p class="modal-text">Last name <span>(optional)</span></p>
+                        <p v-if="$i18n.locale == 'en'" class="modal-text">Last name <span>(optional)</span></p>
+                        <p v-else class="modal-text">Фамилия <span>(необязательно)</span></p>
                         <input type="text" placeholder="Watson">
                     </label>
                 </div>
                 <div class="modal-info">
                     <label class="modal-label">
-                        <p class="modal-text">Email address<span>(required)</span></p>
+                        <p v-if="$i18n.locale == 'en'" class="modal-text">Email address<span>(required)</span></p>
+                        <p v-else class="modal-text">Электронная почта<span>(Обязательно)</span></p>
                         <input type="email" required placeholder="amelia.watson@gmail.com">
                     </label>
                     <label class="modal-label">
-                        <p class="modal-text">Phone number<span>(optional)</span></p>
+                        <p v-if="$i18n.locale == 'en'" class="modal-text">Phone number<span>(optional)</span></p>
+                        <p v-else class="modal-text">Phone number<span>(необязательно)</span></p>
                         <input type="number" placeholder="123 - 456 - 7890">
                     </label>
                 </div>
-                <button class="modal-btn">Send</button>
+                <button class="modal-btn">{{$t('modalBtn')}}</button>
             </form>
         </div>
     </div>

@@ -10,7 +10,7 @@
         spaceBetween: 0,
     },
     '350': {
-        slidesPerView: 1.9,
+        slidesPerView: 1.9, 
         spaceBetween: 0,
     },
     '400': {
@@ -40,7 +40,7 @@
       <template v-else>
         <swiper-slide  v-for="(item) in ruList" :key="item.id">
             <img :src="item.img" class="hero-img" />
-            <span class="hero-name">{{ item.name }}</span>
+            <span class="hero-name">{{ item.name }} </span>
             <div class="hero-slider_line" :class="item.name"></div>
         </swiper-slide>
       </template>
@@ -54,12 +54,11 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import { EffectCoverflow } from 'swiper/modules';
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
 import IK from "../../../assets/img/hero/IK.png"
 import Bish from "../../../assets/img/hero/Bish.png"
 import Naryn from "../../../assets/img/hero/Naryn.png"
-import i18n from '../../../i18n'; 
 
 const enList = [
     {
@@ -95,9 +94,9 @@ const ruList = [
         name: "Нарын"
     },
 ]
+
  
 const modules = [EffectCoverflow];
-
 
 </script>
 

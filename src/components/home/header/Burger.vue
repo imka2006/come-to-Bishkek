@@ -48,13 +48,13 @@
             </div>
             <div class="burger-list">
                 <template v-if="$i18n.locale == 'en'">
-                    <a v-for="item in store.state.enList" @click="isActive = false" :key="item.id" class="burger-item"
+                    <a v-for="item in store.state.enList" @click="isActive = false; item.name == 'Feedback' ? store.state.modal = true : ''" :key="item.id" class="burger-item"
                         :href="item.link">{{
                             item.name
                         }}</a>
                 </template>
                 <template v-else>
-                    <a v-for="item in store.state.ruList" @click="isActive = false" :key="item.id" class="burger-item"
+                    <a v-for="item in store.state.ruList" @click="isActive = false; item.name == 'Связаться' ? store.state.modal = true : ''" :key="item.id" class="burger-item"
                         :href="item.link">{{
                             item.name
                         }}</a>
@@ -71,7 +71,7 @@
                             fill="#23262F" />
                     </svg>
                 </a>
-                <a class="burger-item another cocial" target="_blank" href=""><svg width="21" height="20"
+                <a class="burger-item another cocial" target="_blank" href="https://instagram.com/come_to_bishkek?igshid=YzcxN2Q2NzY0OA=="><svg width="21" height="20"
                         viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_301_588)">
                             <path

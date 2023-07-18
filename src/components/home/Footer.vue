@@ -9,7 +9,7 @@
                                 href="#about">{{ item.name }}</a></li>
                     </ul>
                     <ul class="footer-list">
-                        <li v-for="item in enListSec" :key="item.id" class="footer-item"><a :href="item.link">{{item.name}}</a></li> 
+                        <li v-for="item in enListSec" :key="item.id" @click="item.name == 'Feedback' ? store.state.modal = true : ''" class="footer-item"><a :href="item.link">{{item.name}}</a></li> 
                     </ul>
                 </div>
                 <div v-else class="footer-another">
@@ -18,7 +18,7 @@
                                 :href="item.link">{{ item.name }}</a></li>
                     </ul>
                     <ul class="footer-list">
-                        <li v-for="item in ruListSec" :key="item.id" class="footer-item"><a :href="item.link">{{item.name}}</a></li> 
+                        <li v-for="item in ruListSec" :key="item.id" @click="item.name == 'Связаться' ? store.state.modal = true : ''" class="footer-item"><a :href="item.link">{{item.name}}</a></li> 
                     </ul>
                 </div>
                 <ul class="footer-list_another">
@@ -41,8 +41,11 @@
 </template>
 
 <script setup>
+import { useStore } from 'vuex';
 import Logo from '../../assets/icons/footer/Logo.vue';
 import Send from '../Send.vue';
+
+const store = useStore()
 
 const enList = [
     {

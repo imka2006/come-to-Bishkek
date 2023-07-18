@@ -11,7 +11,7 @@
                         <span class="team-description">{{ item.text }}</span>
                         <div class="team-line"></div>
                         <div class="team-cocial">
-                            <a href="#" target="_blank">
+                            <a :href="item.instagram" target="_blank">
                                 <Instagram />
                             </a>
                             <a href="#" target="_blank">
@@ -27,7 +27,7 @@
                         <span class="team-description">{{ item.text }}</span>
                         <div class="team-line"></div>
                         <div class="team-cocial">
-                            <a href="#" target="_blank">
+                            <a :href="item.instagram" target="_blank">
                                 <Instagram />
                             </a>
                             <a href="#" target="_blank">
@@ -62,7 +62,7 @@ const enList = [
         name: "Meerim",
         text: "Co-Founder",
         facebook: "",
-        instagram: "",
+        instagram: "https://instagram.com/come_to_bishkek?igshid=YzcxN2Q2NzY0OA==",
     },
     {
         id: 1,
@@ -70,7 +70,7 @@ const enList = [
         name: "Darian",
         text: "Owner & Founder",
         facebook: "",
-        instagram: "",
+        instagram: "https://instagram.com/come_to_bishkek?igshid=YzcxN2Q2NzY0OA==",
     },
     {
         id: 2,
@@ -78,7 +78,7 @@ const enList = [
         name: "Aisana",
         text: "Manager",
         facebook: "",
-        instagram: "",
+        instagram: "https://instagram.com/come_to_bishkek?igshid=YzcxN2Q2NzY0OA==",
     },
     // {
     //     id: 3,
@@ -86,7 +86,7 @@ const enList = [
     //     name: "Kanat",
     //     text: "Guide",
     //     facebook: "",
-    //     instagram: "",
+    //     instagram: "https://instagram.com/come_to_bishkek?igshid=YzcxN2Q2NzY0OA==",
     // },
     // {
     //     id: 4,
@@ -94,7 +94,7 @@ const enList = [
     //     name: "Aigerim",
     //     text: "Guide",
     //     facebook: "",
-    //     instagram: "",
+    //     instagram: "https://instagram.com/come_to_bishkek?igshid=YzcxN2Q2NzY0OA==",
     // },
     // {
     //     id: 5,
@@ -102,7 +102,7 @@ const enList = [
     //     name: "Murat",
     //     text: "Guide",
     //     facebook: "",
-    //     instagram: "",
+    //     instagram: "https://instagram.com/come_to_bishkek?igshid=YzcxN2Q2NzY0OA==",
     // },
 ]
 const ruList = [
@@ -112,7 +112,7 @@ const ruList = [
         name: "Меерим",
         text: "Соучредитель",
         facebook: "",
-        instagram: "",
+        instagram: "https://instagram.com/come_to_bishkek?igshid=YzcxN2Q2NzY0OA==",
     },
     {
         id: 1,
@@ -120,7 +120,7 @@ const ruList = [
         name: "Дариан",
         text: "Владелец и основатель",
         facebook: "",
-        instagram: "",
+        instagram: "https://instagram.com/come_to_bishkek?igshid=YzcxN2Q2NzY0OA==",
     },
     {
         id: 2,
@@ -128,7 +128,7 @@ const ruList = [
         name: "Айсана",
         text: "Менеджер",
         facebook: "",
-        instagram: "",
+        instagram: "https://instagram.com/come_to_bishkek?igshid=YzcxN2Q2NzY0OA==",
     },
 ];
 </script>
@@ -228,6 +228,7 @@ const ruList = [
         &-description {
             font-size: 14px;
             font-weight: 400;
+            max-width: 125px;
         }
 
 

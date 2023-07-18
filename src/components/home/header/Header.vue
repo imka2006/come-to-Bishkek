@@ -8,11 +8,11 @@
           </li>
           <li class="header-line"></li>
           <template v-if="$i18n.locale == 'en'">
-            <li v-for="item in store.state.enList" :key="item.id" class="header-item"><a :href="item.link">{{ item.name
+            <li v-for="item in store.state.enList" :key="item.id" @click="item.name == 'Feedback' ? store.state.modal = true : '' " class="header-item"><a :href="item.link">{{ item.name
             }}</a></li>
           </template>
           <template v-else>
-            <li v-for="item in store.state.ruList" :key="item.id" class="header-item"><a :href="item.link">{{ item.name
+            <li v-for="item in store.state.ruList" :key="item.id" @click="item.name == 'Связаться' ? store.state.modal = true : '' " class="header-item"><a :href="item.link">{{ item.name
             }}</a></li>
           </template>
 
@@ -25,7 +25,7 @@
           <a href="#" target="_blank" class="header-item">
             <Facebook />
           </a>
-          <a href="#" target="_blank" class="header-item">
+          <a href="https://instagram.com/come_to_bishkek?igshid=YzcxN2Q2NzY0OA==" target="_blank" class="header-item">
             <Instagram />
           </a>
           <div v-if="store.state.lang" class="header-item" @click="store.state.lang = !store.state.lang; $i18n.locale = 'ru'">

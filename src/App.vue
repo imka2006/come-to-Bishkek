@@ -29,7 +29,6 @@ import Enjoy from './components/home/Enjoy.vue';
 import Hero from './components/home/hero/Hero.vue';
 import Modal from './components/Modal.vue';
 
-
 </script>
 
 <style>
