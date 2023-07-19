@@ -30,6 +30,7 @@ const val = ref("")
     padding: 8px 8px 8px 16px;
     box-sizing: border-box;
     margin: 0 auto;
+    overflow: hidden;
 
     input {
         font-size: 14px;
