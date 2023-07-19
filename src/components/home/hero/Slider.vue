@@ -29,7 +29,7 @@
         slidesPerView: 3,
         spaceBetween: 0,
     },
-}" :initialSlide="1" class="hero-swiper">
+}" :initialSlide="1" @slideChange="onSlideChange" class="hero-swiper">
         <template v-if="$i18n.locale == 'en'">
             <swiper-slide  v-for="(item) in enList" :key="item.id">
             <img :src="item.img" class="hero-img" />
@@ -98,6 +98,10 @@ const ruList = [
  
 const modules = [EffectCoverflow];
 
+
+const onSlideChange = (i) => {
+console.log(i.activeIndex);
+}
 </script>
 
 <style scoped lang="scss">
