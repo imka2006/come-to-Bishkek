@@ -28,8 +28,7 @@ const val = ref("")
     display: flex;
     align-items: center;
     padding: 8px 8px 8px 16px;
-    box-sizing: border-box;
-    margin: 0 auto;
+    box-sizing: border-box; 
     overflow: hidden;
 
     input {

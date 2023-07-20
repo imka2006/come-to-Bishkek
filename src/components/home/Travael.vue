@@ -40,6 +40,10 @@ import imgru from "../../assets/img/travel/imgru.png";
         color: rgba(119, 126, 144, 1);
     }
 
+    &-send {
+        margin: 0 !important;
+    }
+
     &-title {
         margin: 15px 0 40px;
         text-align: left !important;
