@@ -6,7 +6,7 @@
                 <div class="hero-info">
                     <div class="hero-line"></div>
                     {{ $t('heroSubtitle') }}
-                    <div class="hero-line"></div>
+                    <div class="hero-line"></div> 
                 </div>
                 <div class="hero-wrapper">
                     <Slider />
@@ -124,7 +124,7 @@ import TextBtn from '../../TextBtn.vue';
         }
     }
 
-    @media screen and (max-width:730px) {
+    @media screen and (max-width:745px) {
 
         & {
             padding: 7px 0 91px;
@@ -132,7 +132,7 @@ import TextBtn from '../../TextBtn.vue';
 
         &-name {
             top: 230px;
-            left: 40px;
+            left: 70px;
             font-size: 20px;
             font-weight: 600;
             line-height: 32px;

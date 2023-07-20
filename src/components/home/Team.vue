@@ -67,7 +67,7 @@ const enList = [
     {
         id: 1,
         img: Darian,
-        name: "Darian",
+        name: "Daniyar",
         text: "Owner & Founder",
         facebook: "",
         instagram: "https://instagram.com/come_to_bishkek?igshid=YzcxN2Q2NzY0OA==",
@@ -117,7 +117,7 @@ const ruList = [
     {
         id: 1,
         img: Darian,
-        name: "Дариан",
+        name: "Данияр",
         text: "Владелец и основатель",
         facebook: "",
         instagram: "https://instagram.com/come_to_bishkek?igshid=YzcxN2Q2NzY0OA==",

@@ -8,7 +8,7 @@
                 </div>
                 <Close style="cursor: pointer;" @click="store.state.modal = false" />
             </div>
-            <form  class="modal-content">
+            <form @submit.prevent="sendEmail" class="modal-content">
                 <div class="modal-info">
                     <label class="modal-label">
                         <p v-if="$i18n.locale == 'en'" class="modal-text">First name <span>(optional)</span></p>
@@ -52,45 +52,45 @@ const lastName = ref("")
 const email = ref("")
 const phone = ref("")
 
-// async function sendEmail() {
-//     const apiKey = '2D3B2020C028EF3BFD81EC56266CB2914D41';
-//     const fromEmail = email.value;
-//     const toEmail = 'iskomedr@gmail.com';
-//     const subject = firstName.value + ' ' + lastName.value;
-//     const content = phone.value;
-//     firstName.value = ""
-//     lastName.value = ""
-//     email.value = ""
-//     phone.value = ""
-//     console.log(fromEmail, subject, content);
-//     try {
-//         const response = await fetch('https://smtp.elasticemail.com:2525', {
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type': 'application/json',
-//             },
-//             body: JSON.stringify({
-//                 apikey: apiKey,
-//                 from: fromEmail,
-//                 to: toEmail,
-//                 subject: subject,
-//                 bodyText: content,
-//             }),
-//         });
+async function sendEmail() {
+    const apiKey = '2D3B2020C028EF3BFD81EC56266CB2914D41';
+    const fromEmail = email.value;
+    const toEmail = 'iskomedr@gmail.com';
+    const subject = firstName.value + ' ' + lastName.value;
+    const content = phone.value;
+    firstName.value = ""
+    lastName.value = ""
+    email.value = ""
+    phone.value = ""
+    console.log(fromEmail, subject, content);
+    try {
+        const response = await fetch('https://smtp.elasticemail.com:2525', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                apikey: apiKey,
+                from: fromEmail,
+                to: toEmail,
+                subject: subject,
+                bodyText: content,
+            }),
+        });
 
-//         const responseData = await response.json();
+        const responseData = await response.json();
 
-//         if (response.ok) {
-//             console.log('Письмо успешно отправлено! Результат:', responseData);
-//         } else {
-//             console.error('Ошибка при отправке письма:', responseData);
-//         }
-//     } catch (error) {
-//         console.error('Ошибка при отправке письма:', error.message);
-//     }
-// }
+        if (response.ok) {
+            console.log('Письмо успешно отправлено! Результат:', responseData);
+        } else {
+            console.error('Ошибка при отправке письма:', responseData);
+        }
+    } catch (error) {
+        console.error('Ошибка при отправке письма:', error.message);
+    }
+}
 
-</script>
+</script> 
 
 <style lang="scss">
 .modal {

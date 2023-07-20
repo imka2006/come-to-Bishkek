@@ -3,8 +3,8 @@
         <div class="container">
             <div class="travel-wrapper">
                 <div class="travel-info">
-                    <span class="travel-text">{{$t('travaelText')}}</span>
-                    <h2 class="title travel-title">{{$t('travaelTitle')}}</h2>
+                    <span class="travel-text">{{ $t('travaelText') }}</span>
+                    <h2 class="title travel-title">{{ $t('travaelTitle') }}</h2>
                     <Send class="travel-send" />
                 </div>
                 <img v-if="$i18n.locale == 'en'" :src="img" alt="img">
@@ -22,6 +22,7 @@ import imgru from "../../assets/img/travel/imgru.png";
 
 <style lang="scss">
 .travel {
+    
     padding: 56px 0 100px;
 
     &-wrapper {
@@ -40,50 +41,51 @@ import imgru from "../../assets/img/travel/imgru.png";
         color: rgba(119, 126, 144, 1);
     }
 
-    &-send {
-        margin: 0 !important;
+ 
+
+&-title {
+    margin: 15px 0 40px;
+    text-align: left !important;
+}
+
+@media screen and (max-width:1110px) {
+    &-wrapper {
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+        text-align: center;
+
     }
 
-    &-title {
-        margin: 15px 0 40px;
-        text-align: left !important;
+    h2 {
+        text-align: center !important;
     }
 
-    @media screen and (max-width:1110px) {
-        &-wrapper {
-            flex-wrap: wrap-reverse;
-            justify-content: center;
-            text-align: center;
-
-        }
-
-        h2 {
-            text-align: center !important;
-        }
-
-        &-send {
-            margin: 0 auto;
-        }
-
-        &-info {
-            max-width: 590px;
-            margin-top: 32px;
-        }
+    &-send { 
+        display: flex;
+        justify-content: center;
     }
 
-    @media screen and (max-width:685px) {
-        & {
-            padding: 60px 0;
-        }
-        h2 {
-            font-size: 24px;
-            font-weight: 600;
-            line-height: 36px;
-            margin:12px 0 40px;
-        }
-        img{
-            max-width: 100%;
-        }
+    &-info {
+        max-width: 590px;
+        margin-top: 32px;
     }
+}
+
+@media screen and (max-width:685px) {
+    & {
+        padding: 60px 0;
+    }
+
+    h2 {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 36px;
+        margin: 12px 0 40px;
+    }
+
+    img {
+        max-width: 100%;
+    }
+} 
 }
 </style>

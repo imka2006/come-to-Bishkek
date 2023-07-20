@@ -41,6 +41,9 @@ const i18n = createI18n({
             modalTitle:"We will contact you",
             modalDescription:"Put your details so we can contact you very fast!",
             modalBtn:"Send",
+
+            sendInput:"Enter your email",
+            sendBtn:"send",
             
 
         },
@@ -82,6 +85,9 @@ const i18n = createI18n({
             modalTitle:"Мы свяжемся с вами",
             modalDescription:"Укажите свои данные, чтобы мы могли связаться с вами очень быстро!",
             modalBtn:"Отправить",
+
+            sendInput:"Электронная почта",
+            sendBtn:"отправить",
         
 
         },

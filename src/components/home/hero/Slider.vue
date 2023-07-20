@@ -21,7 +21,7 @@
         slidesPerView: 3,
         spaceBetween: 0,
     },
-    '730': {
+    '745': {
         slidesPerView: 2.5,
         spaceBetween: 0,
     },
@@ -75,7 +75,7 @@ onMounted(() => {
 })
 </script>
 
-<style scoped lang="scss">
+<style scoped lang="scss"> 
 .swiper {
     width: 100%;
     padding-top: 50px;
@@ -197,7 +197,7 @@ onMounted(() => {
     }
 }
 
-@media screen and (max-width:730px) {
+@media screen and (max-width:745px) {
     .swiper-slide.swiper-slide-visible.swiper-slide-active {
 
         height: 300px;

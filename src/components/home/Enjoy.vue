@@ -9,10 +9,7 @@
                 <TextBtn class="enjoy-btn" :title="$t('enjoyBtn')" />
             </div>
             <div class="enjoy-wrapper">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/IWDY2nLohIY"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
+                <img :src="img" alt="img">
             </div>
                 <TextBtn class="enjoy-btn another" :title="$t('enjoyBtn')" />
         </div>
@@ -21,10 +18,7 @@
 
 <script setup>
 import TextBtn from '../TextBtn.vue';
-// import { useI18n } from 'vue-i18n';
-
-// Используем `useI18n`, чтобы получить объект `$t`
-// const { t } = useI18n();
+import img from "../../assets/img/enjoy/img.png";
 </script>
 
 <style lang="scss">
@@ -47,10 +41,8 @@ import TextBtn from '../TextBtn.vue';
         }
     }
 
-    iframe {
-        width: 100%;
-        height: 500px;
-        border-radius: 15px;
+    img {
+        max-width: 100%;
     }
 
     @media screen and (max-width:600px) {
