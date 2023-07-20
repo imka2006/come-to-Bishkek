@@ -142,7 +142,7 @@ const store = useStore()
         transition: .3s;
         overflow: hidden;
         z-index: 15;
-        overflow: auto;
+        overflow: auto; 
 
         &.active {
             height: 100vh;
@@ -153,6 +153,7 @@ const store = useStore()
         display: flex;
         align-items: center;
         gap: 5px;
+        cursor: pointer;
     }
 
     &-head {
@@ -202,7 +203,7 @@ const store = useStore()
         &.another {
             text-align: center;
             margin: 0 16px 8px;
-            width: 100%;
+            width: auto;
             display: flex;
         }
 

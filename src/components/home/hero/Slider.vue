@@ -31,14 +31,14 @@
     },
 }" :initialSlide="1" @slideChange="onSlideChange" class="hero-swiper">
         <template v-if="$i18n.locale == 'en'">
-            <swiper-slide  v-for="(item) in enList" :key="item.id">
+            <swiper-slide  v-for="(item) in store.state.enListSlide" :key="item.id">
             <img :src="item.img" class="hero-img" />
             <span class="hero-name">{{ item.name }}</span>
             <div class="hero-slider_line" :class="item.name"></div>
         </swiper-slide>
         </template>
       <template v-else>
-        <swiper-slide  v-for="(item) in ruList" :key="item.id">
+        <swiper-slide  v-for="(item) in store.state.ruListSlide" :key="item.id">
             <img :src="item.img" class="hero-img" />
             <span class="hero-name">{{ item.name }} </span>
             <div class="hero-slider_line" :class="item.name"></div>
@@ -56,52 +56,23 @@ import 'swiper/css/pagination';
 import { EffectCoverflow } from 'swiper/modules';
 import { ref, onMounted } from 'vue';
 
-import IK from "../../../assets/img/hero/IK.png"
-import Bish from "../../../assets/img/hero/Bish.png"
-import Naryn from "../../../assets/img/hero/Naryn.png"
 
-const enList = [
-    {
-        id: 0,
-        img: IK,
-        name: "Issyk kul"
-    },
-    {
-        id: 1,
-        img: Bish,
-        name: "Bishkek"
-    },
-    {
-        id: 2,
-        img: Naryn,
-        name: "Naryn"
-    },
-]
-const ruList = [
-    {
-        id: 0,
-        img: IK,
-        name: "Иссык-Куль"
-    },
-    {
-        id: 1,
-        img: Bish,
-        name: "Бишкек"
-    },
-    {
-        id: 2,
-        img: Naryn,
-        name: "Нарын"
-    },
-]
+import { useStore } from 'vuex';
 
- 
+const store = useStore()
+
 const modules = [EffectCoverflow];
 
+const currentSlide = ref(null)
 
 const onSlideChange = (i) => {
-console.log(i.activeIndex);
+    currentSlide.value = store.state.enListSlide[i.activeIndex]
+    store.commit("setCurrentSlide", currentSlide.value)
 }
+
+onMounted(() => {
+    store.commit("setCurrentSlide", currentSlide.value)
+})
 </script>
 
 <style scoped lang="scss">

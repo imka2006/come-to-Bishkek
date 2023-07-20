@@ -1,6 +1,6 @@
 <template>
   <Modal />
-  <div class="wrapper">
+  <div ref="myDivRef" :class="'wrapper' + ' ' + store.state.currentSlide.className">
     <Header />
     <Hero />
   </div>
@@ -28,15 +28,21 @@ import Reviews from './components/home/Reviews.vue';
 import Enjoy from './components/home/Enjoy.vue';
 import Hero from './components/home/hero/Hero.vue';
 import Modal from './components/Modal.vue';
+import { useStore } from 'vuex';
+import { onBeforeUnmount, onMounted, ref } from 'vue';
+
+const store = useStore()
+const myDivRef = ref(null);
 
 </script>
 
-<style>
+<style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 html {
   scroll-behavior: smooth;
 }
+
 body {
   margin: 0;
   padding: 0;
@@ -55,8 +61,20 @@ a[href^="#"]:hover {
 
 .wrapper {
   background-color: #ccc;
-  background: url('./assets/img/global/Bish.png') center no-repeat;
-  background-size: cover;
+  background-size: cover; 
+  transition: .3s;
+
+  &.bish {
+    background: url('./assets/img/global/Bish.png') center no-repeat;
+  }
+
+  &.ik {
+    background: url('./assets/img/global/IK.png') center no-repeat;
+  }
+
+  &.naryn {
+    background: url('./assets/img/global/Naryn.png') center no-repeat;
+  }
 }
 
 h1,

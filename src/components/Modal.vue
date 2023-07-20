@@ -3,37 +3,37 @@
         <div class="modal-wrapper">
             <div class="modal-head">
                 <div>
-                    <h2 class="modal-title">{{$t('modalTitle')}}</h2>
+                    <h2 class="modal-title">{{ $t('modalTitle') }}</h2>
                     <p class="modal-description">{{ $t('modalDescription') }}</p>
                 </div>
                 <Close style="cursor: pointer;" @click="store.state.modal = false" />
             </div>
-            <form class="modal-content">
+            <form  class="modal-content">
                 <div class="modal-info">
                     <label class="modal-label">
                         <p v-if="$i18n.locale == 'en'" class="modal-text">First name <span>(optional)</span></p>
-                        <p v-else class="modal-text">Имя <span>(необязательно)</span></p>    
-                        <input type="text" placeholder="Amelia">
+                        <p v-else class="modal-text">Имя <span>(необязательно)</span></p>
+                        <input type="text" placeholder="Amelia" v-model="firstName">
                     </label>
                     <label class="modal-label">
                         <p v-if="$i18n.locale == 'en'" class="modal-text">Last name <span>(optional)</span></p>
                         <p v-else class="modal-text">Фамилия <span>(необязательно)</span></p>
-                        <input type="text" placeholder="Watson">
+                        <input type="text" placeholder="Watson" v-model="lastName">
                     </label>
                 </div>
                 <div class="modal-info">
                     <label class="modal-label">
                         <p v-if="$i18n.locale == 'en'" class="modal-text">Email address<span>(required)</span></p>
                         <p v-else class="modal-text">Электронная почта<span>(Обязательно)</span></p>
-                        <input type="email" required placeholder="amelia.watson@gmail.com">
+                        <input type="email" required placeholder="amelia.watson@gmail.com" v-model="email">
                     </label>
                     <label class="modal-label">
                         <p v-if="$i18n.locale == 'en'" class="modal-text">Phone number<span>(optional)</span></p>
                         <p v-else class="modal-text">Phone number<span>(необязательно)</span></p>
-                        <input type="number" placeholder="123 - 456 - 7890">
+                        <input type="number" placeholder="123 - 456 - 7890" v-model="phone">
                     </label>
                 </div>
-                <button class="modal-btn">{{$t('modalBtn')}}</button>
+                <button class="modal-btn">{{ $t('modalBtn') }}</button>
             </form>
         </div>
     </div>
@@ -43,8 +43,53 @@
 import Close from "../assets/icons/modal/Close.vue";
 import TextBtn from "../components/TextBtn.vue";
 import { useStore } from 'vuex';
+import { ref } from "vue";
 
 const store = useStore();
+
+const firstName = ref("")
+const lastName = ref("")
+const email = ref("")
+const phone = ref("")
+
+// async function sendEmail() {
+//     const apiKey = '2D3B2020C028EF3BFD81EC56266CB2914D41';
+//     const fromEmail = email.value;
+//     const toEmail = 'iskomedr@gmail.com';
+//     const subject = firstName.value + ' ' + lastName.value;
+//     const content = phone.value;
+//     firstName.value = ""
+//     lastName.value = ""
+//     email.value = ""
+//     phone.value = ""
+//     console.log(fromEmail, subject, content);
+//     try {
+//         const response = await fetch('https://smtp.elasticemail.com:2525', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json',
+//             },
+//             body: JSON.stringify({
+//                 apikey: apiKey,
+//                 from: fromEmail,
+//                 to: toEmail,
+//                 subject: subject,
+//                 bodyText: content,
+//             }),
+//         });
+
+//         const responseData = await response.json();
+
+//         if (response.ok) {
+//             console.log('Письмо успешно отправлено! Результат:', responseData);
+//         } else {
+//             console.error('Ошибка при отправке письма:', responseData);
+//         }
+//     } catch (error) {
+//         console.error('Ошибка при отправке письма:', error.message);
+//     }
+// }
+
 </script>
 
 <style lang="scss">
