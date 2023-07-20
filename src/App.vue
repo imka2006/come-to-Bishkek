@@ -60,20 +60,24 @@ a[href^="#"]:hover {
 }
 
 .wrapper {
-  background-color: #ccc;
-  background-size: cover; 
   transition: .3s;
 
   &.bish {
     background: url('./assets/img/global/Bish.png') center no-repeat;
+    background-color: #ccc;
+    background-size: cover;
   }
 
   &.ik {
     background: url('./assets/img/global/IK.png') center no-repeat;
+    background-color: #ccc;
+    background-size: cover;
   }
 
   &.naryn {
     background: url('./assets/img/global/Naryn.png') center no-repeat;
+    background-color: #ccc;
+    background-size: cover;
   }
 }
 
