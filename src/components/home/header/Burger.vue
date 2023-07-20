@@ -1,11 +1,11 @@
 <template>
     <div class="burger">
-        <div class="burger-menu" @click="isActive = !isActive">
+        <div class="burger-menu" @click="store.state.burger = !store.state.burger">
             <div class="burger-line one"></div>
             <div class="burger-line two"></div>
             <div class="burger-line three"></div>
         </div>
-        <div class="burger-wrapper" :class="{ active: isActive }">
+        <div class="burger-wrapper" :class="{ active: store.state.burger }">
             <div class="burger-head">
                 <Logo />
                 <div class="burger-info">
@@ -37,7 +37,7 @@
                         </svg>
                         RU
                     </div>
-                    <svg @click="isActive = !isActive" style="cursor: pointer;" width="24" height="24" viewBox="0 0 24 24"
+                    <svg @click="store.state.burger = !store.state.burger" style="cursor: pointer;" width="24" height="24" viewBox="0 0 24 24"
                         fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M18 6L6 18" stroke="#8C8785" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" />
@@ -48,13 +48,13 @@
             </div>
             <div class="burger-list">
                 <template v-if="$i18n.locale == 'en'">
-                    <a v-for="item in store.state.enList" @click="isActive = false; item.name == 'Feedback' ? store.state.modal = true : ''" :key="item.id" class="burger-item"
+                    <a v-for="item in store.state.enList" @click="store.state.burger = false; item.name == 'Feedback' ? store.state.modal = true : ''" :key="item.id" class="burger-item"
                         :href="item.link">{{
                             item.name
                         }}</a>
                 </template>
                 <template v-else>
-                    <a v-for="item in store.state.ruList" @click="isActive = false; item.name == 'Связаться' ? store.state.modal = true : ''" :key="item.id" class="burger-item"
+                    <a v-for="item in store.state.ruList" @click="store.state.burger = false; item.name == 'Связаться' ? store.state.modal = true : ''" :key="item.id" class="burger-item"
                         :href="item.link">{{
                             item.name
                         }}</a>
@@ -93,8 +93,7 @@
 <script setup>
 import { ref } from "vue";
 import { useStore } from "vuex";
-import Logo from "../../../assets/icons/footer/Logo.vue";
-const isActive = ref(false) 
+import Logo from "../../../assets/icons/footer/Logo.vue"; 
 const store = useStore()
 </script>
 

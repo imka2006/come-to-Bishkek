@@ -99,29 +99,24 @@ import TextBtn from '../../TextBtn.vue';
             top: 370px;
         }
 
-        &-btn {
+        &-btn { 
             margin-top: 0;
+        }
+        &-slider_line {
+            top: 370px;
         }
     }
 
     @media screen and (max-width:910px) {
         &-name {
             top: 320px;
-        }
-
-        &-btn {
-            margin-top: 0;
-        }
+        } 
     }
 
     @media screen and (max-width:810px) {
         &-name {
             top: 360px;
-        }
-
-        &-btn {
-            margin-top: 0;
-        }
+        } 
     }
 
     @media screen and (max-width:745px) {
@@ -136,11 +131,7 @@ import TextBtn from '../../TextBtn.vue';
             font-size: 20px;
             font-weight: 600;
             line-height: 32px;
-        }
-
-        &-btn {
-            margin-top: 0;
-        }
+        } 
 
         &-swiper_line {
             display: none;

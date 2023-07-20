@@ -5,6 +5,8 @@ import Naryn from "../assets/img/hero/Naryn.png"
 export default createStore({
     state: {
         modal: false,
+        burger:false,
+        hiddan:false,
         enList: [
             {
                 id: 1,

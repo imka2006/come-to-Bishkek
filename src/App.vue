@@ -1,6 +1,6 @@
 <template>
   <Modal />
-  <div ref="myDivRef" :class="'wrapper' + ' ' + store.state.currentSlide.className">
+  <div :class="'wrapper' + ' ' + store.state.currentSlide.className">
     <Header />
     <Hero />
   </div>
@@ -29,10 +29,18 @@ import Enjoy from './components/home/Enjoy.vue';
 import Hero from './components/home/hero/Hero.vue';
 import Modal from './components/Modal.vue';
 import { useStore } from 'vuex';
-import { onBeforeUnmount, onMounted, ref } from 'vue';
+import { onBeforeUnmount, onMounted, ref, watchEffect } from 'vue';
 
-const store = useStore()
-const myDivRef = ref(null);
+const store = useStore() 
+
+watchEffect(() => { 
+  const body = document.body;
+  if (store.state.modal) {
+    body.classList.add('hidan');
+  } else {
+    body.classList.remove('hidan');
+  } 
+});
 
 </script>
 
@@ -47,6 +55,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Inter';
+  overflow: unset;
+
+  &.hidan {
+    overflow: hidden;
+  }
 }
 
 
