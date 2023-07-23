@@ -8,7 +8,7 @@
                 </div>
                 <Close style="cursor: pointer;" @click="store.state.modal = false" />
             </div>
-            <form @submit.prevent="sendEmail" class="modal-content">
+            <form @submit.prevent class="modal-content">
                 <div class="modal-info">
                     <label class="modal-label">
                         <p v-if="$i18n.locale == 'en'" class="modal-text">First name <span>(optional)</span></p>
@@ -33,64 +33,47 @@
                         <input type="number" placeholder="123 - 456 - 7890" v-model="phone">
                     </label>
                 </div>
-                <button class="modal-btn">{{ $t('modalBtn') }}</button>
+                <button @click="sendEmailToServer()" type="button" class="modal-btn">{{ $t('modalBtn') }}</button>
             </form>
         </div>
     </div>
 </template>
 
-<script setup>
-import Close from "../assets/icons/modal/Close.vue";
-import TextBtn from "../components/TextBtn.vue";
+
+<script setup >
 import { useStore } from 'vuex';
+
 import { ref } from "vue";
+import Close from "../assets/icons/modal/Close.vue"; 
 
 const store = useStore();
+ 
+const firstName = ref("");
+const lastName = ref("");
+const email = ref("");
+const phone = ref("");
 
-const firstName = ref("")
-const lastName = ref("")
-const email = ref("")
-const phone = ref("")
+const sendEmailToServer = () => {   
+  let body = `Фио: ${firstName.value} ${lastName.value} <br/> Почта: ${email.value} <br/> Номер телефона: ${phone.value}`;
 
-async function sendEmail() {
-    const apiKey = '2D3B2020C028EF3BFD81EC56266CB2914D41';
-    const fromEmail = email.value;
-    const toEmail = 'iskomedr@gmail.com';
-    const subject = firstName.value + ' ' + lastName.value;
-    const content = phone.value;
-    firstName.value = ""
-    lastName.value = ""
-    email.value = ""
-    phone.value = ""
-    console.log(fromEmail, subject, content);
-    try {
-        const response = await fetch('https://smtp.elasticemail.com:2525', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                apikey: apiKey,
-                from: fromEmail,
-                to: toEmail,
-                subject: subject,
-                bodyText: content,
-            }),
-        });
+  Email.send({
+    Host: "smtp.elasticemail.com",
+    Username: "cometobishkek@gmail.com",
+    Password: "8A1F58254389F4D58563D9BEDAE0DC7D0C89",
+    To: "cometobishkek@gmail.com",
+    From: "cometobishkek@gmail.com",
+    Subject: "Заявка на тур",
+    Body: body,
+  }).then((message) => alert(message));
 
-        const responseData = await response.json();
+  
+  firstName.value = "";
+  lastName.value = "";
+  email.value = "";
+  phone.value = "";
+};
+</script>
 
-        if (response.ok) {
-            console.log('Письмо успешно отправлено! Результат:', responseData);
-        } else {
-            console.error('Ошибка при отправке письма:', responseData);
-        }
-    } catch (error) {
-        console.error('Ошибка при отправке письма:', error.message);
-    }
-}
-
-</script> 
 
 <style lang="scss">
 .modal {
@@ -190,7 +173,7 @@ async function sendEmail() {
         color: rgba(252, 252, 253, 1);
     }
 
-    @media screen and (max-width:760px) {
+    @media screen and (max-width:770px) {
         &-title {
             font-size: 20px;
             font-weight: 600;

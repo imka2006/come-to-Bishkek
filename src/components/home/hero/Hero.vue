@@ -127,7 +127,7 @@ import TextBtn from '../../TextBtn.vue';
 
         &-name {
             top: 230px;
-            left: 70px;
+            left: 50px;
             font-size: 20px;
             font-weight: 600;
             line-height: 32px;

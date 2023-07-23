@@ -83,9 +83,9 @@ const enList = [
     {
         id: 0,
         class: 'one',
-        name: 'John Smith',
-        text: "I've traveled with Come to Bishkek several times, and each time has been a unique and unforgettable experience. Their team of travel specialists are knowledgeable, friendly, and always go the extra mile to make sure that everything and everyone is taken care of. I highly recommend Come to Bishkek to anyone looking for a truly special travel experience!",
-        from: 'Client from Africa'
+        name: 'Phillip Smith',
+        text: "I enjoyed the excursion! It is good that in one day you can visit the main museums and sights of the city, important architectural objects, walk around - it allows you to create an impression (albeit superficial) about the history of the city and the country. At the market you can also touch the life of ordinary people; and there are more opportunities to buy or choose something to remember. The cuisine and food is tasty and unusual for Russia.",
+        from: 'Client from U.S.A'
     },
     {
         id: 1,
@@ -99,59 +99,59 @@ const enList = [
         class: 'three',
         name: 'Michael Davis',
         text: "Come to Bishkek made my trips unforgettable. Their expertise in organizing tours and their attention to every aspect of the journey is remarkable. The team is friendly, accommodating, and truly goes above and beyond to create memorable experiences. I can't recommend them enough for anyone looking for exceptional travel experiences!",
-        from: 'Client from Africa'
+        from: 'Client from Spain'
     },
     {
         id: 3,
         class: 'four',
         name: 'Sophia Anderson',
         text: "I've had incredible adventures with Come to Bishkek. Their commitment to providing top-notch services and personalized itineraries is impressive. The team ensures that every moment of the trip is filled with joy and discovery. If you want to explore the wonders of Bishkek with ease and comfort, I highly recommend choosing Come to Bishkek!",
-        from: 'Client from Africa'
+        from: 'Client from India'
     },
     {
         id: 4,
         class: 'five',
-        name: 'William Thompson',
+        name: 'Artem Gorbunov',
         text: "Come to Bishkek offers exceptional travel experiences. From the moment I contacted them, their team has been attentive and responsive to my needs. They provide well-planned itineraries, knowledgeable guides, and excellent customer service. Traveling with Come to Bishkek guarantees unforgettable memories and a smooth journey throughout. I highly endorse their services!",
-        from: 'Client from Africa'
+        from: 'Client from Russia'
     }
 ];
 
 const ruList = [
-    {
+{
         id: 0,
         class: 'one',
-        name: 'Сара Джонсон',
-        text: "Я несколько раз путешествовала с Come to Bishkek, и каждый раз это был уникальный и незабываемый опыт. Их команда специалистов по путешествиям обладает знаниями, дружелюбием и всегда делает все возможное, чтобы все и каждый были в хороших руках. Я настоятельно рекомендую Come to Bishkek всем, кто ищет по-настоящему особенный опыт путешествия!",
-        from: 'Клиент из Африки'
+        name: 'Филипп Смит',
+        text: "Мне понравилась экскурсия! Здорово, что за один день можно посетить основные музеи и достопримечательности города, важные архитектурные объекты, погулять - это позволяет создать впечатление (хоть и поверхностное) о истории города и страны. На рынке также можно окунуться в жизнь обычных людей; и есть больше возможностей купить или выбрать что-то на память. Кухня и еда вкусные и необычные для России.",
+        from: 'Клиент из США'
     },
     {
         id: 1,
         class: 'two',
-        name: 'Сара Джонсон',
-        text: "Я несколько раз путешествовала с Come to Bishkek, и каждый раз это был уникальный и незабываемый опыт. Их команда специалистов по путешествиям обладает знаниями, дружелюбием и всегда делает все возможное, чтобы все и каждый были в хороших руках. Я настоятельно рекомендую Come to Bishkek всем, кто ищет по-настоящему особенный опыт путешествия!",
+        name: 'Эмма Джонсон',
+        text: "У меня были удивительные путешествия с Come to Bishkek. Команда профессиональна, внимательна и следит за каждой деталью. Предлагаемые ими впечатления — необычайны, позволяют исследовать красоту Бишкека наилучшим образом. Я настоятельно рекомендую их услуги всем любителям путешествий!",
         from: 'Клиент из Африки'
     },
     {
         id: 2,
         class: 'three',
-        name: 'Сара Джонсон',
-        text: "Я несколько раз путешествовала с Come to Bishkek, и каждый раз это был уникальный и незабываемый опыт. Их команда специалистов по путешествиям обладает знаниями, дружелюбием и всегда делает все возможное, чтобы все и каждый были в хороших руках. Я настоятельно рекомендую Come to Bishkek всем, кто ищет по-настоящему особенный опыт путешествия!",
-        from: 'Клиент из Африки'
+        name: 'Майкл Дэвис',
+        text: "Come to Bishkek сделал мои поездки незабываемыми. Их экспертиза в организации туров и внимание к каждому аспекту путешествия — впечатляют. Команда дружелюбна, готова помочь и действительно идет на все ухищрения, чтобы создать запоминающиеся впечатления. Я не могу достаточно рекомендовать их всем, кто ищет исключительные путешествия!",
+        from: 'Клиент из Испании'
     },
     {
         id: 3,
         class: 'four',
-        name: 'Сара Джонсон',
-        text: "Я несколько раз путешествовала с Come to Bishkek, и каждый раз это был уникальный и незабываемый опыт. Их команда специалистов по путешествиям обладает знаниями, дружелюбием и всегда делает все возможное, чтобы все и каждый были в хороших руках. Я настоятельно рекомендую Come to Bishkek всем, кто ищет по-настоящему особенный опыт путешествия!",
-        from: 'Клиент из Африки'
+        name: 'София Андерсон',
+        text: "У меня были невероятные приключения с Come to Bishkek. Их приверженность предоставлению первоклассных услуг и индивидуальных маршрутов впечатляет. Команда обеспечивает, чтобы каждый момент поездки был полон радости и открытий. Если вы хотите исследовать чудеса Бишкека с комфортом и удовольствием, настоятельно рекомендую выбрать Come to Bishkek!",
+        from: 'Клиент из Индии'
     },
     {
         id: 4,
         class: 'five',
-        name: 'Сара Джонсон',
-        text: "Я несколько раз путешествовала с Come to Bishkek, и каждый раз это был уникальный и незабываемый опыт. Их команда специалистов по путешествиям обладает знаниями, дружелюбием и всегда делает все возможное, чтобы все и каждый были в хороших руках. Я настоятельно рекомендую Come to Bishkek всем, кто ищет по-настоящему особенный опыт путешествия!",
-        from: 'Клиент из Африки'
+        name: 'Артем Горбунов',
+        text: "Come to Bishkek предлагает исключительные впечатления от путешествий. С того момента, как я связался с ними, их команда была внимательна и реагировала на мои потребности. Они предлагают хорошо спланированные маршруты, знающих гидов и отличное обслуживание клиентов. Путешествие с Come to Bishkek гарантирует незабываемые воспоминания и приятное путешествие. Я очень одобряю их услуги!",
+        from: 'Клиент из России'
     }
 ];
 
@@ -164,7 +164,7 @@ const ruList = [
 }
 
 .swiper-button-next {
-    background: url("../../assets/icons/reviews/next.svg");
+    background: url("../../assets/icons/reviews/next.svg"); 
     width: 32px;
     height: 32px;
     top: auto;

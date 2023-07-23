@@ -29,7 +29,7 @@ import Enjoy from './components/home/Enjoy.vue';
 import Hero from './components/home/hero/Hero.vue';
 import Modal from './components/Modal.vue';
 import { useStore } from 'vuex';
-import { onBeforeUnmount, onMounted, ref, watchEffect } from 'vue';
+import { watchEffect } from 'vue';
 
 const store = useStore() 
 
