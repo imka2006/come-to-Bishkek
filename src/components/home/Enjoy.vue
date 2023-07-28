@@ -9,7 +9,7 @@
                 <TextBtn class="enjoy-btn" :title="$t('enjoyBtn')" />
             </div>
             <div class="enjoy-wrapper">
-                <img :src="img" alt="img">
+                <!-- <img :src="img" alt="img"> -->
             </div>
                 <TextBtn class="enjoy-btn another" :title="$t('enjoyBtn')" />
         </div>
@@ -33,6 +33,7 @@ import img from "../../assets/img/enjoy/img.png";
 
     &-wrapper {
         margin-top: 80px;
+        height: 300px;
     }
 
     &-btn {

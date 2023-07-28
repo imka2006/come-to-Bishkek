@@ -75,7 +75,7 @@ const enList = [
     {
         id: 2,
         img: Aisana,
-        name: "Aisana",
+        name: "Eliza",
         text: "Manager",
         facebook: "",
         instagram: "https://instagram.com/come_to_bishkek?igshid=YzcxN2Q2NzY0OA==",
@@ -125,7 +125,7 @@ const ruList = [
     {
         id: 2,
         img: Aisana,
-        name: "Айсана",
+        name: "Элиза",
         text: "Менеджер",
         facebook: "",
         instagram: "https://instagram.com/come_to_bishkek?igshid=YzcxN2Q2NzY0OA==",
