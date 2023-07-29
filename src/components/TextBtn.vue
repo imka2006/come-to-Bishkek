@@ -1,5 +1,5 @@
 <template>
-  <button @click="store.state.modal = !store.state.modal; console.log(store.state.modal )">{{ title }}</button>
+  <button @click="store.state.modal = !store.state.modal">{{ title }}</button>
 </template>
 
 <script setup> 

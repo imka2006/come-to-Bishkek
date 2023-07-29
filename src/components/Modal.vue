@@ -8,7 +8,7 @@
                 </div>
                 <Close style="cursor: pointer;" @click="store.state.modal = false" />
             </div>
-            <form @submit.prevent class="modal-content">
+            <form @submit.prevent="sendEmailToServer()" class="modal-content">
                 <div class="modal-info">
                     <label class="modal-label">
                         <p v-if="$i18n.locale == 'en'" class="modal-text">First name <span>(optional)</span></p>
@@ -33,7 +33,7 @@
                         <input type="number" placeholder="123 - 456 - 7890" v-model="phone">
                     </label>
                 </div>
-                <button @click="sendEmailToServer()" type="button" class="modal-btn">{{ $t('modalBtn') }}</button>
+                <button :disabled="email == ''" class="modal-btn">{{ $t('modalBtn') }}</button>
             </form>
         </div>
     </div>
@@ -44,33 +44,33 @@
 import { useStore } from 'vuex';
 
 import { ref } from "vue";
-import Close from "../assets/icons/modal/Close.vue"; 
+import Close from "../assets/icons/modal/Close.vue";
 
 const store = useStore();
- 
+
 const firstName = ref("");
 const lastName = ref("");
 const email = ref("");
 const phone = ref("");
 
-const sendEmailToServer = () => {   
-  let body = `Фио: ${firstName.value} ${lastName.value} <br/> Почта: ${email.value} <br/> Номер телефона: ${phone.value}`;
+const sendEmailToServer = () => {
+    let body = `Фио: ${firstName.value} ${lastName.value} <br/> Почта: ${email.value} <br/> Номер телефона: ${phone.value}`;
 
-  Email.send({
-    Host: "smtp.elasticemail.com",
-    Username: "cometobishkek@gmail.com",
-    Password: "8A1F58254389F4D58563D9BEDAE0DC7D0C89",
-    To: "cometobishkek@gmail.com",
-    From: "cometobishkek@gmail.com",
-    Subject: "Заявка на тур",
-    Body: body,
-  }).then((message) => alert(message));
+    Email.send({
+        Host: "smtp.elasticemail.com",
+        Username: "cometobishkek@gmail.com",
+        Password: "A849860F9A72F120AC8426FE86DC62AD1D9C",
+        To: "cometobishkek@gmail.com",
+        From: "cometobishkek@gmail.com",
+        Subject: "Заявка на тур",
+        Body: body,
+    }).then((message) => alert(message));
 
-  
-  firstName.value = "";
-  lastName.value = "";
-  email.value = "";
-  phone.value = "";
+
+    firstName.value = "";
+    lastName.value = "";
+    email.value = "";
+    phone.value = "";
 };
 </script>
 
@@ -171,6 +171,11 @@ const sendEmailToServer = () => {
         border-radius: 90px;
         background: rgba(90, 204, 3, 1);
         color: rgba(252, 252, 253, 1);
+
+        &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
     }
 
     @media screen and (max-width:770px) {
