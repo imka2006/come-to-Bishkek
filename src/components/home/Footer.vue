@@ -26,10 +26,8 @@
                     </ul>
                 </div>
                 <ul class="footer-list_another">
-                    <li class="footer-item litle"><a href="#" target="_blank">{{ $t('footerText') }}</a></li>
-                    <li class="footer-item">
-                        <Send />
-                    </li>
+                    <li class="footer-item litle"><span>{{ $t('footerText') }}</span></li>
+                    <li class="footer-item"> <Send /> </li>
                     <li class="footer-item cocial"><a href="tel:+996708221198" target="_blank">+996 (708) 221 198</a></li>
                     <li class="footer-item cocial"><a href="mailto:info@cometobishkek.com"
                             target="_blank">info@cometobishkek.com</a></li>

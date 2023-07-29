@@ -22,7 +22,7 @@
             <a href="tel:+996708221198" target="_blank" class="header-item another">+996 (708) 221 198</a>
             <a href="mailto:info@cometobishkek.com" target="_blank" class="header-item another">info@cometobishkek.com</a>
           </div>
-          <a href="#" target="_blank" class="header-item">
+          <a href="https://www.facebook.com/profile.php?id=100095160225441" target="_blank" class="header-item">
             <Facebook />
           </a>
           <a href="https://instagram.com/come_to_bishkek?igshid=YzcxN2Q2NzY0OA==" target="_blank" class="header-item">
