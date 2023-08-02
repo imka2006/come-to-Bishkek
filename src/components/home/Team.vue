@@ -80,36 +80,12 @@ const enList = [
         facebook: "https://www.facebook.com/profile.php?id=100095160225441",
         instagram: "https://instagram.com/come_to_bishkek?igshid=YzcxN2Q2NzY0OA==",
     },
-    // {
-    //     id: 3,
-    //     img: Kanat,
-    //     name: "Kanat",
-    //     text: "Guide",
-    //     facebook: "https://www.facebook.com/profile.php?id=100095160225441",
-    //     instagram: "https://instagram.com/come_to_bishkek?igshid=YzcxN2Q2NzY0OA==",
-    // },
-    // {
-    //     id: 4,
-    //     img: Aigerim,
-    //     name: "Aigerim",
-    //     text: "Guide",
-    //     facebook: "https://www.facebook.com/profile.php?id=100095160225441",
-    //     instagram: "https://instagram.com/come_to_bishkek?igshid=YzcxN2Q2NzY0OA==",
-    // },
-    // {
-    //     id: 5,
-    //     img: Murat,
-    //     name: "Murat",
-    //     text: "Guide",
-    //     facebook: "https://www.facebook.com/profile.php?id=100095160225441",
-    //     instagram: "https://instagram.com/come_to_bishkek?igshid=YzcxN2Q2NzY0OA==",
-    // },
 ]
 const ruList = [
     {
         id: 0,
         img: Meerim,
-        name: "Меерим",
+        name: "Мерим",
         text: "Соучредитель",
         facebook: "https://www.facebook.com/profile.php?id=100095160225441",
         instagram: "https://instagram.com/come_to_bishkek?igshid=YzcxN2Q2NzY0OA==",

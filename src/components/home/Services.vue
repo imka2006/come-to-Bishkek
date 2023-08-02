@@ -6,6 +6,8 @@
             <div class="services-wrapper">
                 <img class="services-bg services-left" :src="Left" alt="img">
                 <img class="services-bg services-right" :src="Right" alt="img">
+
+                
                 <template v-if="$i18n.locale == 'en'">
                     <div class="services-block" v-for="item in enList" :key="item.id">
                         <span class="services-number">0{{ item.id }}</span>
@@ -13,6 +15,7 @@
                         <p class="services-description">{{ item.description }}</p>
                     </div>
                 </template>
+
                 <template v-else>
                     <div class="services-block" v-for="item in ruList" :key="item.id">
                         <span class="services-number">0{{ item.id }}</span>
@@ -52,7 +55,12 @@ const enList = [
     {
         id: 4,
         name: 'Workshops:',
-        description: 'We conduct exciting workshops on Kyrgyz culture, such as making traditional felt products or cooking national dishes.  Our advantages:',
+        description: 'We conduct exciting workshops on Kyrgyz culture, such as making traditional felt products or cooking national dishes.',
+    },
+    {
+        id: 5,
+        name: 'Workshops:',
+        description: 'We conduct exciting workshops on Kyrgyz culture, such as making traditional felt products or cooking national dishes.',
     }
 ]
 const ruList = [
@@ -74,7 +82,7 @@ const ruList = [
     {
         id: 4,
         name: 'Мастерские:',
-        description: 'Мы проводим увлекательные мастер-классы по кыргызской культуре, такие как изготовление традиционных войлочных изделий или приготовление национальных блюд. Наши преимущества:',
+        description: 'Мы проводим увлекательные мастер-классы по кыргызской культуре, такие как изготовление традиционных войлочных изделий или приготовление национальных блюд.',
     }
 ];
 
