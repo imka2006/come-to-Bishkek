@@ -9,7 +9,8 @@
             <div class="burger-head">
                 <Logo />
                 <div class="burger-info">
-                    <div v-if="store.state.lang" class="burger-lang" @click="store.state.lang = !store.state.lang; $i18n.locale = 'ru'">
+                    <div v-if="store.state.lang" class="burger-lang"
+                        @click="store.state.lang = !store.state.lang; $i18n.locale = 'ru'">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                 d="M9.99935 16.6667C13.6812 16.6667 16.666 13.6819 16.666 9.99999C16.666 6.31809 13.6812 3.33332 9.99935 3.33332C6.31745 3.33332 3.33268 6.31809 3.33268 9.99999C3.33268 13.6819 6.31745 16.6667 9.99935 16.6667ZM9.99935 18.3333C14.6017 18.3333 18.3327 14.6024 18.3327 9.99999C18.3327 5.39762 14.6017 1.66666 9.99935 1.66666C5.39698 1.66666 1.66602 5.39762 1.66602 9.99999C1.66602 14.6024 5.39698 18.3333 9.99935 18.3333Z"
@@ -37,8 +38,8 @@
                         </svg>
                         RU
                     </div>
-                    <svg @click="store.state.burger = !store.state.burger" style="cursor: pointer;" width="24" height="24" viewBox="0 0 24 24"
-                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg @click="store.state.burger = !store.state.burger" style="cursor: pointer;" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M18 6L6 18" stroke="#8C8785" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" />
                         <path d="M6 6L18 18" stroke="#8C8785" stroke-width="2" stroke-linecap="round"
@@ -48,30 +49,34 @@
             </div>
             <div class="burger-list">
                 <template v-if="$i18n.locale == 'en'">
-                    <a v-for="item in store.state.enList" @click="store.state.burger = false; item.name == 'Feedback' ? store.state.modal = true : ''" :key="item.id" class="burger-item"
-                        :href="item.link">{{
-                            item.name
-                        }}</a>
+                    <a v-for="item in store.state.enList"
+                        @click="store.state.burger = false; item.name == 'Feedback' ? store.state.modal = true : ''"
+                        :key="item.id" class="burger-item" :href="item.link">{{
+                                                item.name
+                                                }}</a>
                 </template>
                 <template v-else>
-                    <a v-for="item in store.state.ruList" @click="store.state.burger = false; item.name == 'Связаться' ? store.state.modal = true : ''" :key="item.id" class="burger-item"
-                        :href="item.link">{{
-                            item.name
-                        }}</a>
+                    <a v-for="item in store.state.ruList"
+                        @click="store.state.burger = false; item.name == 'Связаться' ? store.state.modal = true : ''"
+                        :key="item.id" class="burger-item" :href="item.link">{{
+                                                item.name
+                                                }}</a>
                 </template>
             </div>
             <span class="burger-name">{{ $t('burgerText') }}</span>
             <a class="burger-item another" href="tel:+996708221198">+996 (708) 221 198</a>
-            <a class="burger-item another" href="mailto:info@cometobishkek.com">info@cometobishkek.com</a>
+            <a class="burger-item another" href="mailto:cometobishkek@gmail.com">cometobishkek@gmail.com</a>
             <div class="burger-cocial">
-                <a class="burger-item another cocial" target="_blank" href="https://www.facebook.com/profile.php?id=100095160225441"><svg width="21" height="20"
+                <a class="burger-item another cocial" target="_blank"
+                    href="https://www.facebook.com/profile.php?id=100095160225441"><svg width="21" height="20"
                         viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M18.0548 0H3.44504C1.95664 0 0.75 1.20659 0.75 2.69504V17.3049C0.75 18.7933 1.95659 19.9999 3.44504 19.9999H10.6505L10.6628 12.853H8.80601C8.56471 12.853 8.36886 12.6579 8.36793 12.4166L8.35903 10.1129C8.3581 9.87025 8.55453 9.67308 8.79715 9.67308H10.6505V7.44709C10.6505 4.86384 12.2282 3.45724 14.5326 3.45724H16.4236C16.6655 3.45724 16.8617 3.65339 16.8617 3.89537V5.83789C16.8617 6.07978 16.6657 6.27587 16.4238 6.27602L15.2634 6.27655C14.0102 6.27655 13.7675 6.87207 13.7675 7.74602V9.67313H16.5213C16.7836 9.67313 16.9872 9.90225 16.9563 10.1628L16.6832 12.4666C16.6571 12.687 16.4702 12.8531 16.2482 12.8531H13.7798L13.7675 20H18.0549C19.5433 20 20.7499 18.7934 20.7499 17.305V2.69504C20.7498 1.20659 19.5432 0 18.0548 0Z"
                             fill="#23262F" />
                     </svg>
                 </a>
-                <a class="burger-item another cocial" target="_blank" href="https://instagram.com/come_to_bishkek?igshid=YzcxN2Q2NzY0OA=="><svg width="21" height="20"
+                <a class="burger-item another cocial" target="_blank"
+                    href="https://instagram.com/come_to_bishkek?igshid=YzcxN2Q2NzY0OA=="><svg width="21" height="20"
                         viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_301_588)">
                             <path
@@ -93,7 +98,7 @@
 <script setup>
 import { ref } from "vue";
 import { useStore } from "vuex";
-import Logo from "../../../assets/icons/footer/Logo.vue"; 
+import Logo from "../../../assets/icons/footer/Logo.vue";
 const store = useStore()
 </script>
 
@@ -141,7 +146,7 @@ const store = useStore()
         transition: .3s;
         overflow: hidden;
         z-index: 15;
-        overflow: auto; 
+        overflow: auto;
 
         &.active {
             height: 100vh;
@@ -209,10 +214,12 @@ const store = useStore()
         &.cocial {
             width: 45%;
         }
+
         &.another.cocial {
             display: flex;
             justify-content: center;
         }
+
         &.cocial {
             width: 45%;
         }
@@ -232,5 +239,4 @@ const store = useStore()
         font-weight: 600;
         line-height: 16px;
     }
-}
-</style>
+}</style>

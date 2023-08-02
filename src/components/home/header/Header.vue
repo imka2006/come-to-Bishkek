@@ -8,19 +8,24 @@
           </li>
           <li class="header-line"></li>
           <template v-if="$i18n.locale == 'en'">
-            <li v-for="item in store.state.enList" :key="item.id" @click="item.name == 'Feedback' ? store.state.modal = true : '' " class="header-item"><a :href="item.link">{{ item.name
-            }}</a></li>
+            <li v-for="item in store.state.enList" :key="item.id"
+              @click="item.name == 'Feedback' ? store.state.modal = true : '' " class="header-item"><a
+                :href="item.link">{{ item.name
+                                }}</a></li>
           </template>
           <template v-else>
-            <li v-for="item in store.state.ruList" :key="item.id" @click="item.name == 'Связаться' ? store.state.modal = true : '' " class="header-item"><a :href="item.link">{{ item.name
-            }}</a></li>
+            <li v-for="item in store.state.ruList" :key="item.id"
+              @click="item.name == 'Связаться' ? store.state.modal = true : '' " class="header-item"><a
+                :href="item.link">{{ item.name
+                                }}</a></li>
           </template>
 
         </ul>
         <div class="header-cocial">
           <div class="header-info">
             <a href="tel:+996708221198" target="_blank" class="header-item another">+996 (708) 221 198</a>
-            <a href="mailto:info@cometobishkek.com" target="_blank" class="header-item another">info@cometobishkek.com</a>
+            <a href="mailto:cometobishkek@gmail.com" target="_blank"
+              class="header-item another">cometobishkek@gmail.com</a>
           </div>
           <a href="https://www.facebook.com/profile.php?id=100095160225441" target="_blank" class="header-item">
             <Facebook />
@@ -28,7 +33,8 @@
           <a href="https://instagram.com/come_to_bishkek?igshid=YzcxN2Q2NzY0OA==" target="_blank" class="header-item">
             <Instagram />
           </a>
-          <div v-if="store.state.lang" class="header-item" @click="store.state.lang = !store.state.lang; $i18n.locale = 'ru'">
+          <div v-if="store.state.lang" class="header-item"
+            @click="store.state.lang = !store.state.lang; $i18n.locale = 'ru'">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd"
                 d="M9.99935 16.6667C13.6812 16.6667 16.666 13.6819 16.666 9.99999C16.666 6.31809 13.6812 3.33332 9.99935 3.33332C6.31745 3.33332 3.33268 6.31809 3.33268 9.99999C3.33268 13.6819 6.31745 16.6667 9.99935 16.6667ZM9.99935 18.3333C14.6017 18.3333 18.3327 14.6024 18.3327 9.99999C18.3327 5.39762 14.6017 1.66666 9.99935 1.66666C5.39698 1.66666 1.66602 5.39762 1.66602 9.99999C1.66602 14.6024 5.39698 18.3333 9.99935 18.3333Z"
@@ -42,7 +48,7 @@
             </svg>
             EN
           </div>
-          <div  v-else class="header-item" @click="store.state.lang = !store.state.lang; $i18n.locale = 'en'">
+          <div v-else class="header-item" @click="store.state.lang = !store.state.lang; $i18n.locale = 'en'">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd"
                 d="M9.99935 16.6667C13.6812 16.6667 16.666 13.6819 16.666 9.99999C16.666 6.31809 13.6812 3.33332 9.99935 3.33332C6.31745 3.33332 3.33268 6.31809 3.33268 9.99999C3.33268 13.6819 6.31745 16.6667 9.99935 16.6667ZM9.99935 18.3333C14.6017 18.3333 18.3327 14.6024 18.3327 9.99999C18.3327 5.39762 14.6017 1.66666 9.99935 1.66666C5.39698 1.66666 1.66602 5.39762 1.66602 9.99999C1.66602 14.6024 5.39698 18.3333 9.99935 18.3333Z"
@@ -138,5 +144,4 @@ const store = useStore()
       display: none;
     }
   }
-}
-</style>
+}</style>

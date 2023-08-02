@@ -17,7 +17,7 @@
                 <div v-else class="footer-another">
                     <ul class="footer-list">
                         <li v-for="item in ruList" :key="item.id" class="footer-item"><a :href="item.link">{{ item.name
-                        }}</a></li>
+                                                        }}</a></li>
                     </ul>
                     <ul class="footer-list">
                         <li v-for="item in ruListSec" :key="item.id"
@@ -27,10 +27,12 @@
                 </div>
                 <ul class="footer-list_another">
                     <li class="footer-item litle"><span>{{ $t('footerText') }}</span></li>
-                    <li class="footer-item"> <Send /> </li>
+                    <li class="footer-item">
+                        <Send />
+                    </li>
                     <li class="footer-item cocial"><a href="tel:+996708221198" target="_blank">+996 (708) 221 198</a></li>
-                    <li class="footer-item cocial"><a href="mailto:info@cometobishkek.com"
-                            target="_blank">info@cometobishkek.com</a></li>
+                    <li class="footer-item cocial"><a href="mailto:cometobishkek@gmail.com"
+                            target="_blank">cometobishkek@gmail.com</a></li>
                 </ul>
 
 
