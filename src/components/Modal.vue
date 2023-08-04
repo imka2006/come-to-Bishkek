@@ -167,8 +167,8 @@ const sendEmailToServer = () => {
         font-weight: 700;
         line-height: 16px;
         letter-spacing: 0.01em;
-        padding: 16px 24px 17px 24px;
-        border-radius: 90px;
+        padding: 16px 24px 17px 24px; 
+        border-radius: 5px;
         background: rgba(90, 204, 3, 1);
         color: rgba(252, 252, 253, 1);
 
