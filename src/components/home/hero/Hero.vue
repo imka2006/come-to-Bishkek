@@ -11,7 +11,7 @@
                 <div class="hero-wrapper">
                     <Slider />
                 </div>
-                <TextBtn class="hero-btn" :title="$t('heroBtn')" />
+                <TextBtn  style="border-radius: 8px;" class="hero-btn" :title="$t('heroBtn')" />
             </div>
         </div>
     </section>
