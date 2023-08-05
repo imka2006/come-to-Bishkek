@@ -1,5 +1,5 @@
 <template>
-    <section class="reviews">
+    <section id="Feedback" class="reviews">
         <div class="container">
             <h2 class="title">{{$t('reviewsTitle')}}</h2>
             <p class="text reviews-head_text">{{$t('reviewsText')}}</p>
@@ -92,28 +92,28 @@ const enList = [
         class: 'two',
         name: 'Emma Johnson',
         text: "I've had amazing journeys with Come to Bishkek. The team is professional, attentive, and ensures that every detail is taken care of. The experiences they offer are extraordinary, allowing me to explore the beauty of Bishkek in the best possible way. I highly recommend their services to all travel enthusiasts!",
-        from: 'Client from Africa'
+        from: 'Client from Colombia'
     },
     {
         id: 2,
         class: 'three',
         name: 'Michael Davis',
         text: "Come to Bishkek made my trips unforgettable. Their expertise in organizing tours and their attention to every aspect of the journey is remarkable. The team is friendly, accommodating, and truly goes above and beyond to create memorable experiences. I can't recommend them enough for anyone looking for exceptional travel experiences!",
-        from: 'Client from Spain'
+        from: 'Client from Morocco'
     },
     {
         id: 3,
         class: 'four',
-        name: 'Sophia Anderson',
+        name: 'Artem Gorbunov',
         text: "I've had incredible adventures with Come to Bishkek. Their commitment to providing top-notch services and personalized itineraries is impressive. The team ensures that every moment of the trip is filled with joy and discovery. If you want to explore the wonders of Bishkek with ease and comfort, I highly recommend choosing Come to Bishkek!",
-        from: 'Client from India'
+        from: 'Client from Russia'
     },
     {
         id: 4,
         class: 'five',
-        name: 'Artem Gorbunov',
+        name: 'Ashton Luke',
         text: "Come to Bishkek offers exceptional travel experiences. From the moment I contacted them, their team has been attentive and responsive to my needs. They provide well-planned itineraries, knowledgeable guides, and excellent customer service. Traveling with Come to Bishkek guarantees unforgettable memories and a smooth journey throughout. I highly endorse their services!",
-        from: 'Client from Russia'
+        from: 'Client from Australia'
     }
 ];
 
@@ -130,28 +130,28 @@ const ruList = [
         class: 'two',
         name: 'Эмма Джонсон',
         text: "У меня были удивительные путешествия с Come to Bishkek. Команда профессиональна, внимательна и следит за каждой деталью. Предлагаемые ими впечатления — необычайны, позволяют исследовать красоту Бишкека наилучшим образом. Я настоятельно рекомендую их услуги всем любителям путешествий!",
-        from: 'Клиент из Африки'
+        from: 'Клиент из Колумбия'
     },
     {
         id: 2,
         class: 'three',
         name: 'Майкл Дэвис',
         text: "Come to Bishkek сделал мои поездки незабываемыми. Их экспертиза в организации туров и внимание к каждому аспекту путешествия — впечатляют. Команда дружелюбна, готова помочь и действительно идет на все ухищрения, чтобы создать запоминающиеся впечатления. Я не могу достаточно рекомендовать их всем, кто ищет исключительные путешествия!",
-        from: 'Клиент из Испании'
+        from: 'Клиент из Марокко'
     },
     {
         id: 3,
         class: 'four',
-        name: 'София Андерсон',
+        name: 'Артем Горбунов',
         text: "У меня были невероятные приключения с Come to Bishkek. Их приверженность предоставлению первоклассных услуг и индивидуальных маршрутов впечатляет. Команда обеспечивает, чтобы каждый момент поездки был полон радости и открытий. Если вы хотите исследовать чудеса Бишкека с комфортом и удовольствием, настоятельно рекомендую выбрать Come to Bishkek!",
-        from: 'Клиент из Индии'
+        from: 'Клиент из России'
     },
     {
         id: 4,
         class: 'five',
-        name: 'Артем Горбунов',
+        name: 'Эштон Люк',
         text: "Come to Bishkek предлагает исключительные впечатления от путешествий. С того момента, как я связался с ними, их команда была внимательна и реагировала на мои потребности. Они предлагают хорошо спланированные маршруты, знающих гидов и отличное обслуживание клиентов. Путешествие с Come to Bishkek гарантирует незабываемые воспоминания и приятное путешествие. Я очень одобряю их услуги!",
-        from: 'Клиент из России'
+        from: 'Клиент из Австралии'
     }
 ];
 

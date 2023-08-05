@@ -31,7 +31,7 @@ export default createStore({
             {
                 id: 5,
                 name: "Feedback",
-                link: "#",
+                link: "#Feedback",
             },
         ],
         ruList: [
@@ -58,7 +58,7 @@ export default createStore({
             {
                 id: 5,
                 name: "Связаться",
-                link: "#",
+                link: "#Feedback",
             },
         ],
         lang: true,

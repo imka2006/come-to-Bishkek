@@ -9,8 +9,7 @@
                         </li>
                     </ul>
                     <ul class="footer-list">
-                        <li v-for="item in enListSec" :key="item.id"
-                            @click="item.name == 'Feedback' ? store.state.modal = true : ''" class="footer-item"><a
+                        <li v-for="item in enListSec" :key="item.id" class="footer-item"><a
                                 :href="item.link">{{ item.name }}</a></li>
                     </ul>
                 </div>
@@ -20,8 +19,7 @@
                                                         }}</a></li>
                     </ul>
                     <ul class="footer-list">
-                        <li v-for="item in ruListSec" :key="item.id"
-                            @click="item.name == 'Связаться' ? store.state.modal = true : ''" class="footer-item"><a
+                        <li v-for="item in ruListSec" :key="item.id"  class="footer-item"><a
                                 :href="item.link">{{ item.name }}</a></li>
                     </ul>
                 </div>
@@ -94,7 +92,7 @@ const enListSec = [
     {
         id: 2,
         name: "Feedback",
-        link: "#"
+        link: "#Feedback"
     },
     {
         id: 3,
@@ -111,7 +109,7 @@ const ruListSec = [
     {
         id: 2,
         name: "Связаться",
-        link: "#"
+        link: "#Feedback"
     },
     {
         id: 3,

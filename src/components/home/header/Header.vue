@@ -8,16 +8,14 @@
           </li>
           <li class="header-line"></li>
           <template v-if="$i18n.locale == 'en'">
-            <li v-for="item in store.state.enList" :key="item.id"
-              @click="item.name == 'Feedback' ? store.state.modal = true : '' " class="header-item"><a
+            <li v-for="item in store.state.enList" :key="item.id" class="header-item"><a
                 :href="item.link">{{ item.name
-                                }}</a></li>
+                }}</a></li>
           </template>
           <template v-else>
-            <li v-for="item in store.state.ruList" :key="item.id"
-              @click="item.name == 'Связаться' ? store.state.modal = true : '' " class="header-item"><a
+            <li v-for="item in store.state.ruList" :key="item.id" class="header-item"><a
                 :href="item.link">{{ item.name
-                                }}</a></li>
+                }}</a></li>
           </template>
 
         </ul>
@@ -76,7 +74,7 @@ import Instagram from '../../../assets/icons/header/Instagram.vue';
 import Burger from '../../../components/home/header/Burger.vue';
 import { ref } from 'vue';
 import { useStore } from 'vuex';
- 
+
 const store = useStore()
 
 
@@ -144,4 +142,5 @@ const store = useStore()
       display: none;
     }
   }
-}</style>
+}
+</style>

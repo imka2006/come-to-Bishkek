@@ -50,14 +50,14 @@
             <div class="burger-list">
                 <template v-if="$i18n.locale == 'en'">
                     <a v-for="item in store.state.enList"
-                        @click="store.state.burger = false; item.name == 'Feedback' ? store.state.modal = true : ''"
+                        @click="store.state.burger = false; "
                         :key="item.id" class="burger-item" :href="item.link">{{
                                                 item.name
                                                 }}</a>
                 </template>
                 <template v-else>
                     <a v-for="item in store.state.ruList"
-                        @click="store.state.burger = false; item.name == 'Связаться' ? store.state.modal = true : ''"
+                        @click="store.state.burger = false; "
                         :key="item.id" class="burger-item" :href="item.link">{{
                                                 item.name
                                                 }}</a>
